@@ -186,9 +186,101 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8537973851256679720, guid: 923dcc7abf647414c88fc78fd3c51509, type: 3}
+      propertyPath: m_Name
+      value: Part02
+      objectReference: {fileID: 0}
+    - target: {fileID: -8007578637496958540, guid: 923dcc7abf647414c88fc78fd3c51509, type: 3}
+      propertyPath: m_Name
+      value: Complate_ML
+      objectReference: {fileID: 0}
+    - target: {fileID: -7870719866789535068, guid: 923dcc7abf647414c88fc78fd3c51509, type: 3}
+      propertyPath: m_Name
+      value: HolderObj04
+      objectReference: {fileID: 0}
+    - target: {fileID: -7806236729817975694, guid: 923dcc7abf647414c88fc78fd3c51509, type: 3}
+      propertyPath: m_Name
+      value: Open_Swicht_button1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7057955018887199664, guid: 923dcc7abf647414c88fc78fd3c51509, type: 3}
+      propertyPath: m_Name
+      value: Part04
+      objectReference: {fileID: 0}
+    - target: {fileID: -6880499567513410249, guid: 923dcc7abf647414c88fc78fd3c51509, type: 3}
+      propertyPath: m_Name
+      value: Button_m01
+      objectReference: {fileID: 0}
+    - target: {fileID: -5621331932942591946, guid: 923dcc7abf647414c88fc78fd3c51509, type: 3}
+      propertyPath: m_Name
+      value: PowerDril
+      objectReference: {fileID: 0}
+    - target: {fileID: -5408932928666382276, guid: 923dcc7abf647414c88fc78fd3c51509, type: 3}
+      propertyPath: m_Name
+      value: Panel
+      objectReference: {fileID: 0}
+    - target: {fileID: -4938558549504400090, guid: 923dcc7abf647414c88fc78fd3c51509, type: 3}
+      propertyPath: m_Name
+      value: Holder
+      objectReference: {fileID: 0}
+    - target: {fileID: -3513486308920824387, guid: 923dcc7abf647414c88fc78fd3c51509, type: 3}
+      propertyPath: m_Name
+      value: ST_spidle_Controller
+      objectReference: {fileID: 0}
+    - target: {fileID: -1929375292229822338, guid: 923dcc7abf647414c88fc78fd3c51509, type: 3}
+      propertyPath: m_Name
+      value: PlaneWork
+      objectReference: {fileID: 0}
+    - target: {fileID: -951457439522214057, guid: 923dcc7abf647414c88fc78fd3c51509, type: 3}
+      propertyPath: m_Name
+      value: HoldDrill
+      objectReference: {fileID: 0}
+    - target: {fileID: 344045467568419597, guid: 923dcc7abf647414c88fc78fd3c51509, type: 3}
+      propertyPath: m_Name
+      value: HolderObj01
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 923dcc7abf647414c88fc78fd3c51509, type: 3}
       propertyPath: m_Name
       value: Lathe-3D
+      objectReference: {fileID: 0}
+    - target: {fileID: 1343738579941365391, guid: 923dcc7abf647414c88fc78fd3c51509, type: 3}
+      propertyPath: m_Name
+      value: Dril1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1539666669414252816, guid: 923dcc7abf647414c88fc78fd3c51509, type: 3}
+      propertyPath: m_Name
+      value: Cutter
+      objectReference: {fileID: 0}
+    - target: {fileID: 2185954563636660561, guid: 923dcc7abf647414c88fc78fd3c51509, type: 3}
+      propertyPath: m_Name
+      value: Part01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2559893160357943419, guid: 923dcc7abf647414c88fc78fd3c51509, type: 3}
+      propertyPath: m_Name
+      value: Part03
+      objectReference: {fileID: 0}
+    - target: {fileID: 4209222956277331514, guid: 923dcc7abf647414c88fc78fd3c51509, type: 3}
+      propertyPath: m_Name
+      value: HolderObj03
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528764531800951320, guid: 923dcc7abf647414c88fc78fd3c51509, type: 3}
+      propertyPath: m_Name
+      value: HolderObj
+      objectReference: {fileID: 0}
+    - target: {fileID: 5573005136512089803, guid: 923dcc7abf647414c88fc78fd3c51509, type: 3}
+      propertyPath: m_Name
+      value: HolderObj02
+      objectReference: {fileID: 0}
+    - target: {fileID: 7800697667930703349, guid: 923dcc7abf647414c88fc78fd3c51509, type: 3}
+      propertyPath: m_Name
+      value: Target
+      objectReference: {fileID: 0}
+    - target: {fileID: 8560506062427734515, guid: 923dcc7abf647414c88fc78fd3c51509, type: 3}
+      propertyPath: m_Name
+      value: PartCutter
+      objectReference: {fileID: 0}
+    - target: {fileID: 9195651263662314672, guid: 923dcc7abf647414c88fc78fd3c51509, type: 3}
+      propertyPath: m_Name
+      value: HolderObj05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 923dcc7abf647414c88fc78fd3c51509, type: 3}
@@ -404,7 +496,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 1.61, y: 6.83, z: -2.78}
+  m_LocalPosition: {x: 9.7, y: 15.63, z: -6.64}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
