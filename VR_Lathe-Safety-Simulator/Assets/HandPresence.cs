@@ -9,7 +9,8 @@ public class HandPresence : MonoBehaviour
     void Start()
     {
         List<InputDevice> devices = new List<InputDevice>();
-        InputDevices.GetDevices(devices);
+        InputDeviceCharacteristics rightControllerCharacteristics = InputDeviceCharacteristics.Right | InputDeviceCharacteristics.Controller;
+        InputDevices.GetDevicesWithCharacteristics(rightControllerCharacteristics, devices);
 
         foreach (var item in devices)
         {
@@ -21,6 +22,6 @@ public class HandPresence : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
