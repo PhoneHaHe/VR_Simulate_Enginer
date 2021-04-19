@@ -17,6 +17,12 @@ public class HandPresence : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        TryInitialize();
+
+    }
+
+    void TryInitialize()
+    {
         List<InputDevice> devices = new List<InputDevice>();
 
         InputDevices.GetDevicesWithCharacteristics(controllerCharacteristics, devices);
@@ -41,26 +47,30 @@ public class HandPresence : MonoBehaviour
             }
 
             spawnedHandModel = Instantiate(handModelPrefab, transform);
-            handAnimator = spawnedHandModel.GetComponent<Animator>(); 
+            handAnimator = spawnedHandModel.GetComponent<Animator>();
         }
-
     }
 
-    void UpdateHandAnimation(){
+    void UpdateHandAnimation()
+    {
 
-        if(targetDevices.TryGetFeatureValue(CommonUsages.trigger,out float triggerValue))
+        if (targetDevices.TryGetFeatureValue(CommonUsages.trigger, out float triggerValue))
         {
             handAnimator.SetFloat("Trigger", triggerValue);
 
-        }else {
+        }
+        else
+        {
             handAnimator.SetFloat("Trigger", 0);
         }
 
-        if(targetDevices.TryGetFeatureValue(CommonUsages.grip,out float gripValue))
+        if (targetDevices.TryGetFeatureValue(CommonUsages.grip, out float gripValue))
         {
             handAnimator.SetFloat("Grip", gripValue);
 
-        }else {
+        }
+        else
+        {
             handAnimator.SetFloat("Grip", 0);
         }
 
@@ -83,21 +93,25 @@ public class HandPresence : MonoBehaviour
         //     Debug.Log("Primary Touchpad " + primary2DAxisValue);
         // }
 
-        if (showController)
+        if (!targetDevices.isValid)
         {
-            spawnedHandModel.SetActive(false);
-            spawnedController.SetActive(true);
+            TryInitialize();
+
         }
         else
         {
-            if(spawnedHandModel != null){
-                spawnedHandModel.SetActive(true);
-            spawnedController.SetActive(false);
-            UpdateHandAnimation();
-            }else {
-                Debug.LogError("spawnedHandModel is null");
+            if (showController)
+            {
+                spawnedHandModel.SetActive(false);
+                spawnedController.SetActive(true);
             }
-            
+            else
+            {
+                spawnedHandModel.SetActive(true);
+                spawnedController.SetActive(false);
+                UpdateHandAnimation();
+            }
         }
+
     }
 }
