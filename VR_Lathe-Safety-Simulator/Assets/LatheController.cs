@@ -9,7 +9,7 @@ public class LatheController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+    
     }
 
     // Update is called once per frame
@@ -23,11 +23,11 @@ public class LatheController : MonoBehaviour
     }
 
     public void MovetoLeft(){
-        // lathePlatform.transform.Translate();
+        lathePlatform.transform.Translate(new Vector3(10,0,0));
     }
 
     public void MovetoRight(){
-        
+        lathePlatform.transform.Translate(new Vector3(10,0,0));
     }
 
     public void updatePositionOfPlatform(){
