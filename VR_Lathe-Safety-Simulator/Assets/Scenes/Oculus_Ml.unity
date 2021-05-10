@@ -2155,11 +2155,11 @@ ConfigurableJoint:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1049643777}
-  m_ConnectedBody: {fileID: 0}
+  m_ConnectedBody: {fileID: 2125820145291512706}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 2.9041, y: 0.7702, z: -1.311}
+  m_ConnectedAnchor: {x: -0.60099983, y: 0.71200037, z: 0}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 2
@@ -9614,6 +9614,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedRate: 1
+  latheController: {fileID: 8296172667395440439}
 --- !u!1 &1743831733
 GameObject:
   m_ObjectHideFlags: 0
@@ -21732,6 +21733,7 @@ GameObject:
   - component: {fileID: 1500181134}
   - component: {fileID: 1500181135}
   - component: {fileID: 2926426679696138874}
+  - component: {fileID: 2926426679696138875}
   m_Layer: 11
   m_Name: Mesh1
   m_TagString: Untagged
@@ -21834,6 +21836,84 @@ ConfigurableJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &2926426679696138875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2926426679696138873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c2925b20ddb54d4e877e8e7d4e2ca88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_InteractionManager: {fileID: 593520680}
+  m_Colliders:
+  - {fileID: 307859830}
+  m_InteractionLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_OnFirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnLastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnActivate:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnDeactivate:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CustomReticle: {fileID: 0}
+  m_AttachTransform: {fileID: 0}
+  m_AttachEaseInTime: 0.15
+  m_MovementType: 0
+  m_TrackPosition: 1
+  m_SmoothPosition: 0
+  m_SmoothPositionAmount: 5
+  m_TightenPosition: 0.5
+  m_TrackRotation: 1
+  m_SmoothRotation: 0
+  m_SmoothRotationAmount: 5
+  m_TightenRotation: 0.5
+  m_ThrowOnDetach: 1
+  m_ThrowSmoothingDuration: 0.25
+  m_ThrowSmoothingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_ThrowVelocityScale: 1.5
+  m_ThrowAngularVelocityScale: 1
+  m_GravityOnDetach: 0
+  m_RetainTransformParent: 1
 --- !u!1 &2926426679764527315
 GameObject:
   m_ObjectHideFlags: 0
@@ -26293,7 +26373,7 @@ Transform:
   m_GameObject: {fileID: 8296172668467817537}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.838, y: 1.863, z: -0.017}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_Children:
   - {fileID: 582691218140277177}
   m_Father: {fileID: 211635468742094111}
@@ -32633,6 +32713,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lathePlatform: {fileID: 8296172667395440438}
   position: {x: 0, y: 0, z: 0}
+  isActive: 0
   isLeft: 0
   isRight: 0
 --- !u!1 &8296172668467817537
