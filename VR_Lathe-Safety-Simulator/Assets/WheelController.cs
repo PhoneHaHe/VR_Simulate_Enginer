@@ -13,6 +13,7 @@ public class WheelController : MonoBehaviour
     void Start()
     {
         currentPositionOfPlatform = target.transform.position;
+        updateRotationOfValve();
     }
 
     // Update is called once per frame
@@ -22,21 +23,27 @@ public class WheelController : MonoBehaviour
 
         if (currentEulerAngles < 0 && currentPositionOfPlatform.x >= MinPosition)//Left
         {
-            target.transform.position = target.transform.position + new Vector3(currentEulerAngles / 100, 0, 0) * Time.deltaTime;
+            movePlatformByEulerAngles();
         }
         else if (currentEulerAngles > 0 && currentPositionOfPlatform.x <= MaxPosition)//Right
         {
-            target.transform.position = target.transform.position + new Vector3(currentEulerAngles / 100, 0, 0) * Time.deltaTime;
+            movePlatformByEulerAngles();
         }
 
     }
 
-    public void updateRotationOfValve(){
+    public void updateRotationOfValve()
+    {
 
-        var turn = transform.localEulerAngles.z; 
-        turn = (turn > 180) ? turn - 360 : turn;
+        var turn = transform.localEulerAngles.z;
+        turn = (turn > 180) ? turn - 360 : turn;  
         currentEulerAngles = turn;
         currentPositionOfPlatform = target.transform.position;
+    }
+
+    private void movePlatformByEulerAngles()
+    {
+        target.transform.position = target.transform.position + new Vector3(currentEulerAngles / 100, 0, 0) * Time.deltaTime;
     }
 
 
