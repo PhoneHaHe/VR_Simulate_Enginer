@@ -8,8 +8,8 @@ public class WheelController : MonoBehaviour
     public GameObject target;
     public Vector3 currentPositionOfPlatform;
     public float currentEulerAngles = 0;
-    public float MaxPosition = 3.429f;
-    public float MinPosition = 2.347f;
+    public float MaxPosition;
+    public float MinPosition;
     void Start()
     {
         currentPositionOfPlatform = target.transform.position;
@@ -37,6 +37,7 @@ public class WheelController : MonoBehaviour
 
         var turn = transform.localEulerAngles.z;
         turn = (turn > 180) ? turn - 360 : turn;  
+
         currentEulerAngles = turn;
         currentPositionOfPlatform = target.transform.position;
     }
