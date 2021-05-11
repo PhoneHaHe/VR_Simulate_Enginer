@@ -16,7 +16,7 @@ TagManager:
   - GrabObj
   - Ground
   - Body
-  - Ignore Raycast
+  - Grab Ignore Raycast
   - 
   - 
   - 

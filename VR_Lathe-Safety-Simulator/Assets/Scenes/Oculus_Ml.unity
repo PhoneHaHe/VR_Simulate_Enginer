@@ -121,22 +121,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!54 &66573770
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1562563269982450149}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &83550731
 GameObject:
   m_ObjectHideFlags: 0
@@ -1332,7 +1316,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 399538970}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.85, y: 0, z: -2.47}
+  m_LocalPosition: {x: 2.581, y: 0, z: -3.79}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 699752335}
@@ -1624,7 +1608,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 407517798}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.226, y: 0.898, z: -1.149}
+  m_LocalPosition: {x: 2.571, y: 0.726, z: -1.429}
   m_LocalScale: {x: 0.06908061, y: 0.06908061, z: 0.06908061}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2640,10 +2624,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1049643778}
   - component: {fileID: 1049643780}
-  - component: {fileID: 1049643779}
   - component: {fileID: 1049643782}
   - component: {fileID: 1049643781}
-  m_Layer: 8
+  - component: {fileID: 1049643779}
+  m_Layer: 11
   m_Name: Wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2676,22 +2660,22 @@ ConfigurableJoint:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1049643777}
-  m_ConnectedBody: {fileID: 2125820145291512706}
+  m_ConnectedBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.60099983, y: 0.71200037, z: 0}
+  m_ConnectedAnchor: {x: 2.9041, y: 0.7702, z: -1.311}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
-  m_XMotion: 2
-  m_YMotion: 2
-  m_ZMotion: 2
+  m_XMotion: 0
+  m_YMotion: 0
+  m_ZMotion: 0
   m_AngularXMotion: 0
   m_AngularYMotion: 0
   m_AngularZMotion: 2
   m_LinearLimitSpring:
     spring: 0
-    damper: 1
+    damper: 0
   m_LinearLimit:
     limit: 0
     bounciness: 0
@@ -2733,7 +2717,7 @@ ConfigurableJoint:
   m_ZDrive:
     serializedVersion: 3
     positionSpring: 0
-    positionDamper: 1
+    positionDamper: 0
     maximumForce: 3.4028233e+38
   m_TargetRotation: {x: 0, y: 0, z: 0, w: 1}
   m_TargetAngularVelocity: {x: 0, y: 0, z: 0}
@@ -2793,7 +2777,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 593520680}
-  m_Colliders: []
+  m_Colliders:
+  - {fileID: 2926426679246944808}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -2830,13 +2815,13 @@ MonoBehaviour:
   m_MovementType: 0
   m_TrackPosition: 1
   m_SmoothPosition: 0
-  m_SmoothPositionAmount: 5
-  m_TightenPosition: 0.5
+  m_SmoothPositionAmount: 0
+  m_TightenPosition: 0
   m_TrackRotation: 1
   m_SmoothRotation: 0
   m_SmoothRotationAmount: 5
   m_TightenRotation: 0.5
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -3384,10 +3369,10 @@ MonoBehaviour:
   m_ActivateUsage: 2
   m_UIPressUsage: 2
   m_AxisToPressThreshold: 0.1
-  m_RotateAnchorLeft: 16
-  m_RotateAnchorRight: 17
-  m_MoveObjectIn: 14
-  m_MoveObjectOut: 15
+  m_RotateAnchorLeft: 0
+  m_RotateAnchorRight: 0
+  m_MoveObjectIn: 0
+  m_MoveObjectOut: 0
   m_PoseProvider: {fileID: 0}
 --- !u!1 &1107671439
 GameObject:
@@ -3756,10 +3741,10 @@ MonoBehaviour:
   m_ActivateUsage: 2
   m_UIPressUsage: 2
   m_AxisToPressThreshold: 0.1
-  m_RotateAnchorLeft: 16
-  m_RotateAnchorRight: 17
-  m_MoveObjectIn: 14
-  m_MoveObjectOut: 15
+  m_RotateAnchorLeft: 0
+  m_RotateAnchorRight: 0
+  m_MoveObjectIn: 0
+  m_MoveObjectOut: 0
   m_PoseProvider: {fileID: 0}
 --- !u!135 &1270516678
 SphereCollider:
@@ -4288,10 +4273,10 @@ MonoBehaviour:
   m_ActivateUsage: 2
   m_UIPressUsage: 2
   m_AxisToPressThreshold: 0.1
-  m_RotateAnchorLeft: 16
-  m_RotateAnchorRight: 17
-  m_MoveObjectIn: 14
-  m_MoveObjectOut: 15
+  m_RotateAnchorLeft: 0
+  m_RotateAnchorRight: 0
+  m_MoveObjectIn: 0
+  m_MoveObjectOut: 0
   m_PoseProvider: {fileID: 0}
 --- !u!1 &1360436147
 GameObject:
@@ -4893,10 +4878,10 @@ MonoBehaviour:
   m_ActivateUsage: 2
   m_UIPressUsage: 2
   m_AxisToPressThreshold: 0.1
-  m_RotateAnchorLeft: 16
-  m_RotateAnchorRight: 17
-  m_MoveObjectIn: 14
-  m_MoveObjectOut: 15
+  m_RotateAnchorLeft: 0
+  m_RotateAnchorRight: 0
+  m_MoveObjectIn: 0
+  m_MoveObjectOut: 0
   m_PoseProvider: {fileID: 0}
 --- !u!135 &1478134804
 SphereCollider:
@@ -5107,7 +5092,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1546568528}
   m_Enabled: 0
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -16241,7 +16226,7 @@ GameObject:
   - component: {fileID: 1084154553898770559}
   - component: {fileID: 148220844907136350}
   - component: {fileID: 6571129526646440172}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Mesh5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18143,7 +18128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2933361899937696658}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Group2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19926,7 +19911,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 582691218050911632}
-  - component: {fileID: 66573770}
   m_Layer: 11
   m_Name: HandWheelController
   m_TagString: Untagged
@@ -21755,7 +21739,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1815775203477518036}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Group5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22595,6 +22579,7 @@ GameObject:
   - component: {fileID: 8556591685314307121}
   - component: {fileID: 3481919019125016660}
   - component: {fileID: 5417555812767673712}
+  - component: {fileID: 2926426679246944808}
   m_Layer: 8
   m_Name: Hander
   m_TagString: Untagged
@@ -22602,6 +22587,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &2926426679246944808
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2926426679246944807}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.21926413, y: 0.2147958, z: 0.8518325}
+  m_Center: {x: 0.29114786, y: -0.46920234, z: 1.1673436}
 --- !u!1 &2926426679696138873
 GameObject:
   m_ObjectHideFlags: 0
@@ -24295,7 +24293,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5695759849622836533}
   - component: {fileID: 3597369914614799630}
-  - component: {fileID: 3597369914614799629}
   m_Layer: 0
   m_Name: Valve one
   m_TagString: Untagged
@@ -24303,41 +24300,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!59 &3597369914614799629
-HingeJoint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3597369914614799628}
-  m_ConnectedBody: {fileID: 66573770}
-  m_Anchor: {x: 0, y: 0, z: 0}
-  m_Axis: {x: 1, y: 0, z: 0}
-  m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.6010008, y: -0.71200037, z: 0}
-  m_UseSpring: 0
-  m_Spring:
-    spring: 0
-    damper: 0
-    targetPosition: 0
-  m_UseMotor: 0
-  m_Motor:
-    targetVelocity: 0
-    force: 0
-    freeSpin: 0
-  m_UseLimits: 0
-  m_Limits:
-    min: 0
-    max: 0
-    bounciness: 0
-    bounceMinVelocity: 0.2
-    contactDistance: 0
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
 --- !u!54 &3597369914614799630
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -24842,7 +24804,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2186657212783163773}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Group6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25148,7 +25110,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5938952670631073247}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Cycle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25484,7 +25446,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5698103901629273863}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Group3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25864,7 +25826,7 @@ GameObject:
   - component: {fileID: 5709160778038035946}
   - component: {fileID: 3562492037006974784}
   - component: {fileID: 3072290231081465476}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Mesh4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31368,7 +31330,7 @@ GameObject:
   - component: {fileID: 5842586293054005194}
   - component: {fileID: 3825426483109265726}
   - component: {fileID: 5734414119989729220}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Mesh2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32389,7 +32351,7 @@ GameObject:
   - component: {fileID: 1071550648381155451}
   - component: {fileID: 729095861227556586}
   - component: {fileID: 1297818177769275025}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Center
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34630,7 +34592,7 @@ GameObject:
   - component: {fileID: 8579491750198219170}
   - component: {fileID: 1902797300967610774}
   - component: {fileID: 5447112955632265151}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Mesh3
   m_TagString: Untagged
   m_Icon: {fileID: 0}

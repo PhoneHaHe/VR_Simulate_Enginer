@@ -16,7 +16,7 @@ public class ButtonStrucer : MonoBehaviour
 
       if(buttonLight != null){
           buttonLight.enabled = !buttonLight.enabled;
-          Debug.Log("0000");
+          Debug.Log("buttonLight is off");
       }  
     }
 
