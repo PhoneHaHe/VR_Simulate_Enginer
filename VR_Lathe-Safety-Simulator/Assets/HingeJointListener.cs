@@ -63,12 +63,4 @@ public class HingeJointListener : MonoBehaviour
         }
     }
 
-    // private void OnMaxLimitReached(){
-    //     rotateObject.rotationByPositiveValue();
-    // }
-
-    // private void OnMinLimitReached(){
-    //     rotateObject.rotationByNegativeValue();
-    // }
-
 }

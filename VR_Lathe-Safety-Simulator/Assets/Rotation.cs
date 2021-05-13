@@ -54,6 +54,8 @@ public class Rotation : MonoBehaviour
             transform.Rotate(speed);
         }
 
+        // rotationByPositiveBool = true;
+
     }
 
     public void rotationByNegativeValue()
@@ -64,5 +66,21 @@ public class Rotation : MonoBehaviour
             var speed = new Vector3(speedRate * -direction, 0f, 0f);
             transform.Rotate(speed);
         }
+
+        // rotationByNegativeBool = true;
     }
+
+    public void isSwitchSelectPositive()
+    {
+        rotationByPositiveBool = true;
+        rotationByNegativeBool = false;
+    }
+
+    public void isSwitchSelectNegative()
+    {
+        rotationByPositiveBool = false;
+        rotationByNegativeBool = true;
+
+    }
+
 }
