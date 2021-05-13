@@ -10334,7 +10334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78e2bb253b4e6a847824befe657ce622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedRate: 1
+  speedRate: 100
   direction: 1
   rotateIsActive: 0
   rotationByPositiveBool: 0
@@ -22579,7 +22579,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1706158529}
-        m_MethodName: isSwitchSelectNegative
+        m_MethodName: isSwitchSelectPositive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22593,7 +22593,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1706158529}
-        m_MethodName: isSwitchSelectPositive
+        m_MethodName: isSwitchSelectNegative
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
