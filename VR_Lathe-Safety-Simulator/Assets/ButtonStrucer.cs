@@ -72,6 +72,9 @@ public class ButtonStrucer : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+
+        Debug.Log("Tracking Something ");
+
         if (other.CompareTag("HandPlayer") && canHitAgain < Time.time)
         {
             Debug.Log("HandPlayer Tracking");
