@@ -70,7 +70,7 @@ public class ButtonStrucer : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay(Collider other)
+    void OnTriggerEnter(Collider other)
     {
 
         Debug.Log("Tracking Something ");
@@ -82,4 +82,6 @@ public class ButtonStrucer : MonoBehaviour
             buttonHit = true;
         }
     }
+
+    
 }
