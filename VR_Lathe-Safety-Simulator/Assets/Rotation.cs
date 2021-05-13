@@ -34,6 +34,11 @@ public class Rotation : MonoBehaviour
             {
                 rotationByNegativeValue();
             }
+            else
+            {
+                rotationByPositiveBool = false;
+                rotationByNegativeBool = false;
+            }
         }
 
     }
