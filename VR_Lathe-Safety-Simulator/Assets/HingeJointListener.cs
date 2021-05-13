@@ -21,6 +21,7 @@ public class HingeJointListener : MonoBehaviour
 
     //Target 
     public GameObject targetObject;
+    private Rotation rotateObject;
     private float speedRate = 1f;
     private float directionRotate = 1f;
 
@@ -28,6 +29,7 @@ public class HingeJointListener : MonoBehaviour
     void Start()
     {
         hinge = GetComponent<HingeJoint>();
+        rotateObject = targetObject.GetComponent<Rotation>();
     }
 
     private void FixedUpdate()
@@ -40,7 +42,6 @@ public class HingeJointListener : MonoBehaviour
         {
             if (hingeJointState != HingeJointState.Min)
                 OnMinLimitReached.Invoke();
-                targetObject.transform.Rotate(new Vector3(speedRate * -directionRotate,0f,0f));
 
             hingeJointState = HingeJointState.Min;
         }
@@ -49,7 +50,6 @@ public class HingeJointListener : MonoBehaviour
         {
             if (hingeJointState != HingeJointState.Max)
                 OnMaxLimitReached.Invoke();
-                targetObject.transform.Rotate(new Vector3(speedRate * directionRotate,0f,0f));
 
 
             hingeJointState = HingeJointState.Max;
@@ -60,5 +60,13 @@ public class HingeJointListener : MonoBehaviour
             hingeJointState = HingeJointState.None;
         }
     }
+
+    // private void OnMaxLimitReached(){
+    //     rotateObject.rotationByPositiveValue();
+    // }
+
+    // private void OnMinLimitReached(){
+    //     rotateObject.rotationByNegativeValue();
+    // }
 
 }

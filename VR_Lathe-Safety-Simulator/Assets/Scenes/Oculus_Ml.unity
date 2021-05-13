@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 83550734}
   - component: {fileID: 83550733}
   - component: {fileID: 83550736}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Head Drop zone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 99655754}
   - component: {fileID: 99655756}
   - component: {fileID: 99655755}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -497,11 +497,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: RightHandPresence
       objectReference: {fileID: 0}
-    - target: {fileID: 2677819157561760356, guid: 2c575189ba9e6394e8617b52dc8441dc,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 2677819157561760357, guid: 2c575189ba9e6394e8617b52dc8441dc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -584,7 +579,7 @@ GameObject:
   - component: {fileID: 247272488}
   - component: {fileID: 247272487}
   - component: {fileID: 247272486}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -719,9 +714,9 @@ GameObject:
   - component: {fileID: 267420052}
   - component: {fileID: 267420051}
   - component: {fileID: 267420050}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Right Teleport Ray
-  m_TagString: Untagged
+  m_TagString: HandPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1251,7 +1246,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 339028387}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Attach Tranfom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2138,7 +2133,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 699752335}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: VR Offset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2361,7 +2356,7 @@ GameObject:
   - component: {fileID: 1016190449}
   - component: {fileID: 1016190448}
   - component: {fileID: 1016190447}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: RaycastTranspent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2716,7 +2711,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1094408068}
   - component: {fileID: 1094408069}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: light_button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2811,9 +2806,9 @@ GameObject:
   - component: {fileID: 1101156938}
   - component: {fileID: 1101156937}
   - component: {fileID: 1101156936}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Right Ray Interactor
-  m_TagString: Untagged
+  m_TagString: HandPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3418,11 +3413,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: LeftHandPresence
       objectReference: {fileID: 0}
-    - target: {fileID: 5849804642328012695, guid: 08fe72959ad86194ead34d1cabd0f652,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08fe72959ad86194ead34d1cabd0f652, type: 3}
 --- !u!4 &1182751917 stripped
@@ -3514,9 +3504,9 @@ GameObject:
   - component: {fileID: 1270516677}
   - component: {fileID: 1270516679}
   - component: {fileID: 1270516678}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: RightHander
-  m_TagString: Untagged
+  m_TagString: HandPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3720,9 +3710,9 @@ GameObject:
   - component: {fileID: 1331106356}
   - component: {fileID: 1331106355}
   - component: {fileID: 1331106354}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Left Ray Interactor
-  m_TagString: Untagged
+  m_TagString: HandPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4113,9 +4103,9 @@ GameObject:
   - component: {fileID: 1360436151}
   - component: {fileID: 1360436150}
   - component: {fileID: 1360436149}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: 'Left Teleport Ray '
-  m_TagString: Untagged
+  m_TagString: HandPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4651,9 +4641,9 @@ GameObject:
   - component: {fileID: 1478134803}
   - component: {fileID: 1478134805}
   - component: {fileID: 1478134804}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: LeftHander
-  m_TagString: Untagged
+  m_TagString: HandPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5371,7 +5361,7 @@ GameObject:
   - component: {fileID: 1665329702}
   - component: {fileID: 1665329704}
   - component: {fileID: 1665329703}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: RaycastTranspent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5452,7 +5442,7 @@ GameObject:
   - component: {fileID: 1666513990}
   - component: {fileID: 1666513992}
   - component: {fileID: 1666513991}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10598,7 +10588,7 @@ GameObject:
   - component: {fileID: 1951569034}
   - component: {fileID: 1951569036}
   - component: {fileID: 1951569035}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15792,7 +15782,7 @@ GameObject:
   - component: {fileID: 2127174226}
   - component: {fileID: 2127174228}
   - component: {fileID: 2127174227}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22636,8 +22626,8 @@ MonoBehaviour:
   OnMinLimitReached:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1706158527}
-        m_MethodName: 
+      - m_Target: {fileID: 1706158529}
+        m_MethodName: rotationByNegativeValue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22649,8 +22639,19 @@ MonoBehaviour:
         m_CallState: 2
   OnMaxLimitReached:
     m_PersistentCalls:
-      m_Calls: []
-  targetObject: {fileID: 0}
+      m_Calls:
+      - m_Target: {fileID: 1706158529}
+        m_MethodName: rotationByPositiveValue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  targetObject: {fileID: 1706158527}
 --- !u!1 &2926426679764527315
 GameObject:
   m_ObjectHideFlags: 0
@@ -25242,7 +25243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActivate: 0
   buttonHit: 0
-  lighyObj: {fileID: 0}
+  lighyObj: {fileID: 1094408067}
 --- !u!1 &4185264621058698120
 GameObject:
   m_ObjectHideFlags: 0
