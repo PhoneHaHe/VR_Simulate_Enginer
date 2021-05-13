@@ -6,7 +6,8 @@ public class Rotation : MonoBehaviour
 {
     // Start is called before the first frame update
 public  float speedRate = 1f;
-public bool isActive = false;
+public float direction = 1f;
+public bool rotateIsActive = false;
     void Start()
     {
         
@@ -16,7 +17,13 @@ public bool isActive = false;
     void Update()
     {
         
-        if(isActive)
-        transform.Rotate(new Vector3(speedRate,0f,0f));
+        if(rotateIsActive)
+        rotationByValue();
+    }
+
+
+    void rotationByValue(){
+        var speed = new Vector3(speedRate * direction,0f,0f);
+        transform.Rotate(speed);
     }
 }
