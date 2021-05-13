@@ -34,11 +34,6 @@ public class Rotation : MonoBehaviour
             {
                 rotationByNegativeValue();
             }
-            else
-            {
-                rotationByPositiveBool = false;
-                rotationByNegativeBool = false;
-            }
         }
 
     }
@@ -86,6 +81,12 @@ public class Rotation : MonoBehaviour
         rotationByPositiveBool = false;
         rotationByNegativeBool = true;
 
+    }
+
+    public void isSwitchSelectNone()
+    {
+        rotationByPositiveBool = false;
+        rotationByNegativeBool = false;
     }
 
 }

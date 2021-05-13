@@ -15,6 +15,8 @@ public class HingeJointListener : MonoBehaviour
     //Event called on max reached
     public UnityEvent OnMaxLimitReached;
 
+    public UnityEvent OnNoneReached;
+
     public enum HingeJointState { Min,Max,None}
     private HingeJoint hinge;
 
@@ -60,6 +62,9 @@ public class HingeJointListener : MonoBehaviour
         else
         {
             hingeJointState = HingeJointState.None;
+            if(hingeJointState == HingeJointState.None){
+                OnNoneReached.Invoke();
+            }
         }
     }
 
