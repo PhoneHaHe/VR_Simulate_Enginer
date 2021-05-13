@@ -27,6 +27,7 @@ public class Rotation : MonoBehaviour
     public void rotationByPositiveValue()
     {
 
+        Debug.Log("rotationByPositiveValue isCall ");
         if (rotateIsActive)
         {
             var speed = new Vector3(speedRate * direction, 0f, 0f);
@@ -37,6 +38,7 @@ public class Rotation : MonoBehaviour
 
     public void rotationByNegativeValue()
     {
+        Debug.Log("rotationByNegativeValue isCall ");
         if (rotateIsActive)
         {
             var speed = new Vector3(speedRate * -direction, 0f, 0f);
