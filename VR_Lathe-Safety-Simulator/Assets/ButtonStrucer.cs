@@ -35,6 +35,16 @@ public class ButtonStrucer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        TryAccessToButton();
+    }
+
+    void FixedUpdate()
+    {
+        TryAccessToButton();
+    }
+
+    private void TryAccessToButton()
+    {
         if (buttonHit == true)
         {
 
@@ -64,6 +74,7 @@ public class ButtonStrucer : MonoBehaviour
     {
         if (other.CompareTag("HandPlayer") && canHitAgain < Time.time)
         {
+            Debug.Log("HandPlayer Tracking");
             canHitAgain = Time.time + buttonCanHitAgainTime;
             buttonHit = true;
         }
