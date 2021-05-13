@@ -45,7 +45,8 @@ public class WheelController : MonoBehaviour
 
     private void movePlatformByEulerAngles()
     {
-        target.transform.position = target.transform.position + new Vector3(currentEulerAngles / 100, 0, 0) * Time.deltaTime;
+        var speedRate = new Vector3(currentEulerAngles / 100, 0, 0);
+        target.transform.position += target.transform.position + speedRate * Time.deltaTime;
     }
 
 
