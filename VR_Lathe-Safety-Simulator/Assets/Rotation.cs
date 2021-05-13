@@ -5,9 +5,12 @@ using UnityEngine;
 public class Rotation : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float speedRate = 1f;
+    public float speedRate = 10f;
     public float direction = 1f;
     public bool rotateIsActive = false;
+
+    public bool rotationByPositiveBool = false;
+    public bool rotationByNegativeBool = false;
 
     private ButtonStrucer button;
     void Start()
@@ -20,6 +23,23 @@ public class Rotation : MonoBehaviour
     void Update()
     {
         rotateIsActive = button.isActivate;
+
+        if (rotateIsActive == true)
+        {
+            if (rotationByPositiveBool)
+            {
+                rotationByPositiveValue();
+            }
+            else if (rotationByNegativeBool)
+            {
+                rotationByNegativeValue();
+            }
+        }
+
+    }
+
+    void FixedUpdate()
+    {
 
     }
 
