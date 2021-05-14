@@ -26,16 +26,18 @@ public class SafetyButton : MonoBehaviour
         button = transform.GetChild(0).gameObject;
         buttonOriginY = button.transform.position.y;
         buttonOriginZ = button.transform.position.z;
+
+        buttonMain = GameObject.Find("Green_button1").GetComponent<ButtonStrucer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        TryAccessToButton();
     }
 
     void FixedUpdate() {
-        
+        TryAccessToButton();
     }
 
     private void TryAccessToButton()
@@ -74,6 +76,8 @@ public class SafetyButton : MonoBehaviour
 
     void safetyActivate(){
         Debug.Log("Safe Action isCall");
-        buttonMain.isActivate = false;
+
+        buttonMain.OnSafetyCall();
+        isSafeActivate = !isSafeActivate;
     }
 }

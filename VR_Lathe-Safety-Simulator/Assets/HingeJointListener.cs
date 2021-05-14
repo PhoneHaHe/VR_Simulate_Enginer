@@ -32,14 +32,18 @@ public class HingeJointListener : MonoBehaviour
     {
         hinge = GetComponent<HingeJoint>();
         rotateObject = targetObject.GetComponent<Rotation>();
+        Debug.Log("Max: " + hinge.limits.max);
+        Debug.Log("Min: " + hinge.limits.min);
+
     }
 
     private void FixedUpdate()
     {
         float angleWithMinLimit = Mathf.Abs(hinge.angle - hinge.limits.min);
         float angleWithMaxLimit = Mathf.Abs(hinge.angle - hinge.limits.max);
-        Debug.Log("angleWithMinLimit " + angleWithMinLimit);
-        Debug.Log("angleWithMaxLimit " + angleWithMaxLimit);
+
+        /*Debug.Log("angleWithMinLimit " + angleWithMinLimit);
+        Debug.Log("angleWithMaxLimit " + angleWithMaxLimit);*/
 
         //Reached Min
         if(angleWithMinLimit < angleBetweenThreshold)

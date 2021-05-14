@@ -83,5 +83,11 @@ public class ButtonStrucer : MonoBehaviour
         }
     }
 
+    public void OnSafetyCall() {
+
+        isActivate = false;
+        buttonLight.enabled = false;
+    }
+
     
 }

@@ -40,7 +40,19 @@ public class Rotation : MonoBehaviour
 
     void FixedUpdate()
     {
+        rotateIsActive = button.isActivate;
 
+        if (rotateIsActive == true)
+        {
+            if (rotationByPositiveBool)
+            {
+                rotationByPositiveValue();
+            }
+            else if (rotationByNegativeBool)
+            {
+                rotationByNegativeValue();
+            }
+        }
     }
 
 
