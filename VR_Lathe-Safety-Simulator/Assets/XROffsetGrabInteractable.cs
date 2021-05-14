@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class XROfsetGrabInteractable : XRGrabInteractable
+public class XROffsetGrabInteractable : XRGrabInteractable
 {
     // Start is called before the first frame update
     private Vector3 intialAttachLocalPos;

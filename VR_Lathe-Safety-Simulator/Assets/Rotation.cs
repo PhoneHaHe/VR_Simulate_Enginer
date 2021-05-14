@@ -13,10 +13,17 @@ public class Rotation : MonoBehaviour
     public bool rotationByNegativeBool = false;
 
     private ButtonStrucer button;
+
+    public GameObject light;
+    private Light _light;
+    private Renderer _originColorBoard;
     void Start()
     {
         button = GameObject.Find("Green_button1").GetComponent<ButtonStrucer>();
         rotateIsActive = button.isActivate;
+
+        _light = light.GetComponent<Light>();
+        _light.enabled = false;
     }
 
     // Update is called once per frame
@@ -59,7 +66,7 @@ public class Rotation : MonoBehaviour
     public void rotationByPositiveValue()
     {
 
-        Debug.Log("rotationByPositiveValue isCall ");
+        /*Debug.Log("rotationByPositiveValue isCall ");*/
         if (rotateIsActive)
         {
             var speed = new Vector3(speedRate * direction, 0f, 0f);
@@ -72,7 +79,7 @@ public class Rotation : MonoBehaviour
 
     public void rotationByNegativeValue()
     {
-        Debug.Log("rotationByNegativeValue isCall ");
+        /*Debug.Log("rotationByNegativeValue isCall ");*/
         if (rotateIsActive)
         {
             var speed = new Vector3(speedRate * -direction, 0f, 0f);
@@ -99,6 +106,32 @@ public class Rotation : MonoBehaviour
     {
         rotationByPositiveBool = false;
         rotationByNegativeBool = false;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+
+        Debug.Log("Tracking Something ");
+
+        if (other.CompareTag("HandPlayer"))
+        {
+
+            if (rotateIsActive == true) {
+                Debug.LogError("HandPlayer Tracking " + "Hand Dramage");
+                _light.enabled = true;
+                
+
+            } 
+        }
+    }
+
+    void OnTriggerExit(Collider other) {
+
+
+        if (other.CompareTag("HandPlayer")) {
+            _light.enabled = false;
+        }
+
     }
 
 }

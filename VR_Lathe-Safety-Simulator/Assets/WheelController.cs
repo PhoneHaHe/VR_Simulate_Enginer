@@ -46,22 +46,22 @@ public class WheelController : MonoBehaviour
     private void movePlatformByEulerAngles()
     {
         var speedRate = new Vector3(currentEulerAngles / 100, 0, 0);
-        target.transform.position += target.transform.position + speedRate * Time.deltaTime;
+        target.transform.position = target.transform.position + speedRate * Time.deltaTime;
     }
 
-    void OnTriggerEnter(Collider other)
+    /*void OnTriggerEnter(Collider other)
     {
         Debug.Log("Tracking Something ");
 
-        if (other.CompareTag("HandPlayer") /*&& canHitAgain < Time.time*/)
+        if (other.CompareTag("HandPlayer") *//*&& canHitAgain < Time.time*//*)
         {
             Debug.Log("HandPlayer Tracking");
-            /*canHitAgain = Time.time + buttonCanHitAgainTime;
+            *//*canHitAgain = Time.time + buttonCanHitAgainTime;
             buttonHit = true;*/
             /*var speedRate = new Vector3(currentEulerAngles / 100, 0, 0);
-            target.transform.position += target.transform.position + speedRate * Time.deltaTime;*/
+            target.transform.position += target.transform.position + speedRate * Time.deltaTime;*//*
         }
-    }
+    }*/
 
 
 }
