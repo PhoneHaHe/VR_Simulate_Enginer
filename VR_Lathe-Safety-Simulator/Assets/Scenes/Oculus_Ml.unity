@@ -2119,6 +2119,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 713097739}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &776693747 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9170315082374127934, guid: b01dd34157200124fbd0c7f853eb8d95,
+    type: 3}
+  m_PrefabInstance: {fileID: 6515027151661998517}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &789809266
 GameObject:
   m_ObjectHideFlags: 0
@@ -4663,6 +4669,7 @@ MonoBehaviour:
   rotationByNegativeBool: 0
   light: {fileID: 703648050}
   chuckSound2: {fileID: 284080497}
+  ChuckSound2: {fileID: 0}
 --- !u!65 &1706158530
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5500,6 +5507,7 @@ GameObject:
   - component: {fileID: 2084317121}
   - component: {fileID: 2084317119}
   - component: {fileID: 2084317120}
+  - component: {fileID: 2084317122}
   m_Layer: 11
   m_Name: Wheel
   m_TagString: Untagged
@@ -5568,6 +5576,83 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2084317122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084317117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_InteractionManager: {fileID: 593520680}
+  m_Colliders: []
+  m_InteractionLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_OnFirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnLastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnActivate:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnDeactivate:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CustomReticle: {fileID: 0}
+  m_AttachTransform: {fileID: 0}
+  m_AttachEaseInTime: 0.15
+  m_MovementType: 0
+  m_TrackPosition: 1
+  m_SmoothPosition: 0
+  m_SmoothPositionAmount: 5
+  m_TightenPosition: 0.5
+  m_TrackRotation: 1
+  m_SmoothRotation: 0
+  m_SmoothRotationAmount: 5
+  m_TightenRotation: 0.5
+  m_ThrowOnDetach: 1
+  m_ThrowSmoothingDuration: 0.25
+  m_ThrowSmoothingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_ThrowVelocityScale: 1.5
+  m_ThrowAngularVelocityScale: 1
+  m_GravityOnDetach: 0
+  m_RetainTransformParent: 1
 --- !u!1 &2110367056
 GameObject:
   m_ObjectHideFlags: 0
@@ -18207,10 +18292,15 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 593520680}
+    - target: {fileID: 6515027152913312368, guid: b01dd34157200124fbd0c7f853eb8d95,
+        type: 3}
+      propertyPath: m_ActivateUsage
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6515027152913312370, guid: b01dd34157200124fbd0c7f853eb8d95,
         type: 3}
       propertyPath: m_OnSelectEntered.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6515027152913312370, guid: b01dd34157200124fbd0c7f853eb8d95,
         type: 3}
@@ -18225,7 +18315,7 @@ PrefabInstance:
     - target: {fileID: 6515027152913312370, guid: b01dd34157200124fbd0c7f853eb8d95,
         type: 3}
       propertyPath: m_OnSelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6515027152913312370, guid: b01dd34157200124fbd0c7f853eb8d95,
         type: 3}
@@ -18241,6 +18331,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnSelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6515027152913312370, guid: b01dd34157200124fbd0c7f853eb8d95,
+        type: 3}
+      propertyPath: m_OnSelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 776693747}
+    - target: {fileID: 6515027152913312370, guid: b01dd34157200124fbd0c7f853eb8d95,
+        type: 3}
+      propertyPath: m_OnSelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 6515027152913312370, guid: b01dd34157200124fbd0c7f853eb8d95,
+        type: 3}
+      propertyPath: m_OnSelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2084317120}
+    - target: {fileID: 6515027152913312370, guid: b01dd34157200124fbd0c7f853eb8d95,
+        type: 3}
+      propertyPath: m_OnSelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: rotateRotateThisObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 6515027152913312370, guid: b01dd34157200124fbd0c7f853eb8d95,
+        type: 3}
+      propertyPath: m_OnSelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6515027152913312370, guid: b01dd34157200124fbd0c7f853eb8d95,
+        type: 3}
+      propertyPath: m_OnSelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6515027153019484674, guid: b01dd34157200124fbd0c7f853eb8d95,
         type: 3}

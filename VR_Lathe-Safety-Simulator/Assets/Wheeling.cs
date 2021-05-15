@@ -45,8 +45,12 @@ public class Wheeling : InputManager
     //     }
     // }
 
+    void Update() {
+        
+    }
     public void rotateRotateThisObject()
     {
-        this.transform.Rotate(new Vector3(0, 1, 0));
+        Debug.Log("Call Function");
+        transform.Rotate(new Vector3(0, 10, 0));
     }
 }
