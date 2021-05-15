@@ -18,6 +18,7 @@ public class ButtonStrucer : MonoBehaviour
     private float buttonCanHitAgainTime = 0.5f;
     private float canHitAgain;
     // Start is called before the first frame update
+    public AudioSource click;
     void Start()
     {
         buttonLight = lighyObj.GetComponent<Light>();
@@ -62,6 +63,7 @@ public class ButtonStrucer : MonoBehaviour
             {
                 buttonLight.enabled = false;
             }
+            click.Play();
         }
 
         if (button.transform.position.y < buttonOrigin)
