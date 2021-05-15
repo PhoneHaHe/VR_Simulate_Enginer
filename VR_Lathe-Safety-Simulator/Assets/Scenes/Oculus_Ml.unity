@@ -18081,9 +18081,39 @@ PrefabInstance:
       objectReference: {fileID: 593520680}
     - target: {fileID: 6515027152913312370, guid: b01dd34157200124fbd0c7f853eb8d95,
         type: 3}
+      propertyPath: m_OnSelectEntered.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6515027152913312370, guid: b01dd34157200124fbd0c7f853eb8d95,
+        type: 3}
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 593520680}
+    - target: {fileID: 6515027152913312370, guid: b01dd34157200124fbd0c7f853eb8d95,
+        type: 3}
+      propertyPath: m_OnSelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6515027152913312370, guid: b01dd34157200124fbd0c7f853eb8d95,
+        type: 3}
+      propertyPath: m_OnSelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6515027152913312370, guid: b01dd34157200124fbd0c7f853eb8d95,
+        type: 3}
+      propertyPath: m_OnSelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 2084317120}
+    - target: {fileID: 6515027152913312370, guid: b01dd34157200124fbd0c7f853eb8d95,
+        type: 3}
+      propertyPath: m_OnSelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: rotateRotateThisObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 6515027152913312370, guid: b01dd34157200124fbd0c7f853eb8d95,
+        type: 3}
+      propertyPath: m_OnSelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6515027153019484674, guid: b01dd34157200124fbd0c7f853eb8d95,
         type: 3}
       propertyPath: m_InteractionManager

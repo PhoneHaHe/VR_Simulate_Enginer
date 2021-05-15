@@ -45,5 +45,8 @@ public class Wheeling : InputManager
     //     }
     // }
 
-    
+    public void rotateRotateThisObject()
+    {
+        this.transform.Rotate(new Vector3(0, 1, 0));
+    }
 }
