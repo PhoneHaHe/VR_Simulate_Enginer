@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class InputManager : MonoBehaviour
 {
     [SerializeField]
-    public XRNode xRNode;
+    public XRNode xRNode = XRNode.RightHand;
 
     private List<InputDevice> devices = new List<InputDevice>();
 
@@ -25,6 +25,7 @@ public class InputManager : MonoBehaviour
     void GetDevice()
     {
         InputDevices.GetDevicesAtXRNode(xRNode, devices);
+        device = devices[0];
     }
 
     void OnEnable()
