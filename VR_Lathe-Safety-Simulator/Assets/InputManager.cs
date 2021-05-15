@@ -7,7 +7,13 @@ using UnityEngine.Events;
 public class InputManager : MonoBehaviour
 {
     [SerializeField]
-    public XRNode xRNode = XRNode.RightHand;
+    XRNode m_ControllerNode = XRNode.RightHand;
+
+    public XRNode controllerNode
+    {
+        get => m_ControllerNode;
+        set => m_ControllerNode = value;
+    }
 
     private List<InputDevice> devices = new List<InputDevice>();
 
@@ -24,8 +30,12 @@ public class InputManager : MonoBehaviour
 
     void GetDevice()
     {
-        InputDevices.GetDevicesAtXRNode(xRNode, devices);
-        device = devices[0];
+        InputDevices.GetDevicesAtXRNode(m_ControllerNode, devices);
+
+        if (devices.Count > 0)
+        {
+            device = devices[0];
+        }
     }
 
     void OnEnable()
@@ -48,12 +58,12 @@ public class InputManager : MonoBehaviour
         if (device.TryGetFeatureValue(CommonUsages.triggerButton, out triggerButtonValue) && triggerButtonValue && !triggerIsPressed)
         {
             triggerIsPressed = true;
-            Debug.Log($"TriggerButton activated {triggerButtonValue} on {xRNode}");
+            Debug.Log($"TriggerButton activated {triggerButtonValue}");
         }
         else if (!triggerButtonValue && triggerIsPressed)
         {
             triggerIsPressed = false;
-            Debug.Log($"TriggerButton deactivated {triggerButtonValue} on {xRNode}");
+            Debug.Log($"TriggerButton deactivated {triggerButtonValue}");
         }
 
         // capturing primary button press and release
@@ -63,26 +73,33 @@ public class InputManager : MonoBehaviour
         if (device.TryGetFeatureValue(primaryButtonUsage, out primaryButtonValue) && primaryButtonValue && !primaryButtonIsPressed)
         {
             primaryButtonIsPressed = true;
-            Debug.Log($"PrimaryButton activated {primaryButtonValue} on {xRNode}");
+            Debug.Log($"PrimaryButton activated {primaryButtonValue}");
         }
         else if (!primaryButtonValue && primaryButtonIsPressed)
         {
             primaryButtonIsPressed = false;
-            Debug.Log($"PrimaryButton deactivated {primaryButtonValue} on {xRNode}");
+            Debug.Log($"PrimaryButton deactivated {primaryButtonValue}");
         }
 
-        bool secondsButtonValue = false;
-        InputFeatureUsage<bool> secondsButtonUsage = CommonUsages.secondaryButton;
+        // bool secondsButtonValue = false;
+        // InputFeatureUsage<bool> secondsButtonUsage = CommonUsages.secondaryButton;
 
-        if (device.TryGetFeatureValue(secondsButtonUsage, out secondsButtonValue) && secondsButtonValue)
+        // if (device.TryGetFeatureValue(secondsButtonUsage, out secondsButtonValue) && secondsButtonValue)
+        // {
+        //     secondsButtonIsPressed = true;
+        //     Debug.Log($"SecondaryButton activated {secondsButtonValue}");
+        // }
+        // else if (!secondsButtonValue && secondsButtonIsPressed)
+        // {
+        //     secondsButtonIsPressed = false;
+        //     Debug.Log($"SecondaryButton deactivated {secondsButtonValue}");
+        // }
+
+        bool secondButton = false;
+        InputFeatureUsage<bool> secondeButtonUsage = CommonUsages.secondaryButton;
+        if (device.TryGetFeatureValue(secondeButtonUsage, out secondButton) && secondButton)
         {
-            secondsButtonIsPressed = true;
-            Debug.Log($"SecondaryButton activated {secondsButtonValue} on {xRNode}");
-        }
-        else if (!secondsButtonValue && secondsButtonIsPressed)
-        {
-            secondsButtonIsPressed = false;
-            Debug.Log($"SecondaryButton deactivated {secondsButtonValue} on {xRNode}");
+            Debug.Log($"SecondsButton activated {m_ControllerNode}");
         }
 
         // capturing primary 2D Axis changes and release
@@ -103,29 +120,30 @@ public class InputManager : MonoBehaviour
         if (device.TryGetFeatureValue(primary2DAxisUsage, out primary2DAxisValue) && primary2DAxisValue != Vector2.zero && !primary2DAxisIsChosen)
         {
             prevPrimary2DAxisValue = primary2DAxisValue;
-            primary2DAxisIsChosen = true;  
-            Debug.Log($"Primary2DAxis value activated {primary2DAxisValue} on {xRNode}");
+            primary2DAxisIsChosen = true;
+            Debug.Log($"Primary2DAxis value activated {primary2DAxisValue}");
         }
         else if (primary2DAxisValue == Vector2.zero && primary2DAxisIsChosen)
         {
             prevPrimary2DAxisValue = primary2DAxisValue;
             primary2DAxisIsChosen = false;
-            Debug.Log($"Primary2DAxis deactivated {primary2DAxisValue} on {xRNode}");
+            Debug.Log($"Primary2DAxis deactivated {primary2DAxisValue}");
         }
 
         // capturing grip value
         float gripValue;
         InputFeatureUsage<float> gripUsage = CommonUsages.grip;
 
-        if (device.TryGetFeatureValue(gripUsage, out gripValue) && gripValue > 0 && !gripIsPressed)
+        if (device.TryGetFeatureValue(gripUsage, out gripValue))
+        //targetDevices.TryGetFeatureValue(CommonUsages.grip, out float gripValue)
         {
             gripIsPressed = true;
-            Debug.Log($"Grip value {gripValue} activated on {xRNode}");
+            Debug.Log($"Grip value {gripValue} activated");
         }
         else if (gripValue == 0 && gripIsPressed)
         {
             gripIsPressed = false;
-            Debug.Log($"Grip value {gripValue} deactivated on {xRNode}");
+            Debug.Log($"Grip value {gripValue} deactivated");
         }
     }
 }
