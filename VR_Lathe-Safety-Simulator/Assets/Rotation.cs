@@ -14,7 +14,7 @@ public class Rotation : MonoBehaviour
 
     private ButtonStrucer button;
 
-    public GameObject light;
+    private GameObject lightObject;
     private Light _light;
     private Renderer _originColorBoard;
 
@@ -25,7 +25,8 @@ public class Rotation : MonoBehaviour
         button = GameObject.Find("Green_button1").GetComponent<ButtonStrucer>();
         rotateIsActive = button.isActivate;
 
-        _light = light.GetComponent<Light>();
+        lightObject = transform.GetChild(1).gameObject;
+        _light = lightObject.GetComponent<Light>();
         _light.enabled = false;
 
         
