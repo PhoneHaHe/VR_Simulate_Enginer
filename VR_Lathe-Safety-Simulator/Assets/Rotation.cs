@@ -17,7 +17,9 @@ public class Rotation : MonoBehaviour
     public GameObject light;
     private Light _light;
     private Renderer _originColorBoard;
-    /*public AudioClip ChuckSound2;*/
+
+    public AudioSource chuckSound2;
+    public AudioClip ChuckSound2;
     void Start()
     {
         button = GameObject.Find("Green_button1").GetComponent<ButtonStrucer>();
@@ -42,8 +44,12 @@ public class Rotation : MonoBehaviour
             {
                 rotationByNegativeValue();
             }
-            /*audio.PlayOneShort(ChuckSound2);*/ 
+            chuckSound2.Play();
         }
+        else {
+            chuckSound2.Stop();
+        }
+
 
     }
 
