@@ -53,9 +53,10 @@ public class Wheeling : InputManager
     }
     public void rotateRotateThisObject()
     {
-        Debug.Log("Call Function");
+
         if (isHov)
         {
+            Debug.Log("Call Function");
             transform.Rotate(new Vector3(0, 10, 0));
         }
     }
