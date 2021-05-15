@@ -17,9 +17,8 @@ public class Rotation : MonoBehaviour
 
     private GameObject lightObject;
     private Light _light;
-    private Renderer _originColorBoard;
 
-    public AudioSource chuckSound2;
+    public AudioSource effect;
     public AudioSource alert;
     void Start()
     {
@@ -44,13 +43,21 @@ public class Rotation : MonoBehaviour
             {
                 rotationByPositiveValue();
             }
-            else if (rotationByNegativeBool)
+            
+            if (rotationByNegativeBool)
             {
                 rotationByNegativeValue();
             }
-            SoundPlayed();
+
+            
         }
-           
+        else
+        {
+            playedSound = false;
+        }
+
+        SoundPlayed();
+
     }
 
     void FixedUpdate()
@@ -63,12 +70,18 @@ public class Rotation : MonoBehaviour
             {
                 rotationByPositiveValue();
             }
-            else if (rotationByNegativeBool)
+            
+            if (rotationByNegativeBool)
             {
                 rotationByNegativeValue();
             }
-            SoundPlayed();
+            
         }
+        else {
+            playedSound = false;
+        }
+
+        SoundPlayed();
     }
 
 
@@ -122,17 +135,14 @@ public class Rotation : MonoBehaviour
 
     public void SoundPlayed() {
 
-        if (playedSound == true)
+        if (playedSound == false)
         {
-            chuckSound2.Play();
+            effect.Play();
         }
-        else {
+        /*else {
             chuckSound2.Stop();
-        }
+        }*/
 
-        if (rotateIsActive == false) {
-            playedSound = false;
-        }
     }
 
     void OnTriggerEnter(Collider other)

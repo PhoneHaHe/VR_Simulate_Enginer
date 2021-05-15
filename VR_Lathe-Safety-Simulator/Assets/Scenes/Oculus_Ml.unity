@@ -4698,7 +4698,7 @@ MonoBehaviour:
   rotationByPositiveBool: 0
   rotationByNegativeBool: 0
   playedSound: 0
-  chuckSound2: {fileID: 1912222956}
+  effect: {fileID: 1912222956}
   alert: {fileID: 3833871}
 --- !u!65 &1706158530
 BoxCollider:
@@ -5169,13 +5169,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a639617d0069c8e47be693ff449d1d72, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.7
-  m_Pitch: 1
-  Loop: 1
+  m_Volume: 0.5
+  m_Pitch: 0.3
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 100
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500

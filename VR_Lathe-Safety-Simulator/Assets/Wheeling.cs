@@ -45,27 +45,27 @@ public class Wheeling : InputManager
     //     }
     // }
 
-    public bool isHov {get; set;}= false;
+    /*public bool isHov {get; set;} = false;
     void Update()
     {
 
         rotateRotateThisObject();
-    }
+    }*/
     public void rotateRotateThisObject()
     {
 
-        if (isHov)
-        {
+        //if (isHov)
+        //{
             Debug.Log("Call Function");
             transform.Rotate(new Vector3(0, 10, 0));
-        }
+        //}
     }
 
-    void OnTriggerStay(Collider other)
+    /*void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("HandPlayer"))
         {
 
         }
-    }
+    }*/
 }
