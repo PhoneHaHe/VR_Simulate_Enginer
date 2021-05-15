@@ -18,8 +18,7 @@ public class Rotation : MonoBehaviour
     private Light _light;
     private Renderer _originColorBoard;
 
-    public AudioSource chuckSound2;
-    public AudioClip ChuckSound2;
+    private AudioSource chuckSound2;
     void Start()
     {
         button = GameObject.Find("Green_button1").GetComponent<ButtonStrucer>();
@@ -27,6 +26,8 @@ public class Rotation : MonoBehaviour
 
         _light = light.GetComponent<Light>();
         _light.enabled = false;
+
+        chuckSound2 = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -36,6 +37,7 @@ public class Rotation : MonoBehaviour
 
         if (rotateIsActive == true)
         {
+            chuckSound2.Play();
             if (rotationByPositiveBool)
             {
                 rotationByPositiveValue();
@@ -44,12 +46,11 @@ public class Rotation : MonoBehaviour
             {
                 rotationByNegativeValue();
             }
-            chuckSound2.Play();
+            
         }
         else {
             chuckSound2.Stop();
         }
-
 
     }
 
