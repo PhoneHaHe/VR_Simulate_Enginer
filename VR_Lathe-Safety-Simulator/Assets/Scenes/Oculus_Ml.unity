@@ -225,6 +225,7 @@ GameObject:
   - component: {fileID: 82972836}
   - component: {fileID: 82972838}
   - component: {fileID: 82972837}
+  - component: {fileID: 82972839}
   m_Layer: 8
   m_Name: Hander
   m_TagString: Untagged
@@ -293,6 +294,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 82972835}
   m_Mesh: {fileID: -8089699231438940418, guid: aaf8ad3a7d5ff0a448bccc6ac1b27dee, type: 3}
+--- !u!65 &82972839
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 82972835}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2192642, y: 0.2147958, z: 0.8518327}
+  m_Center: {x: 0.29114792, y: -0.46920234, z: 1.1673448}
 --- !u!1 &122413580
 GameObject:
   m_ObjectHideFlags: 0
@@ -4444,7 +4458,6 @@ MonoBehaviour:
   rotateIsActive: 0
   rotationByPositiveBool: 0
   rotationByNegativeBool: 0
-  light: {fileID: 703648050}
 --- !u!65 &1706158530
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5376,7 +5389,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2084317118}
   - component: {fileID: 2084317121}
-  - component: {fileID: 2084317119}
   - component: {fileID: 2084317120}
   - component: {fileID: 2084317122}
   m_Layer: 11
@@ -5405,19 +5417,6 @@ Transform:
   m_Father: {fileID: 1669891849}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2084317119
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2084317117}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.93368614, y: 1.1245205, z: 1.2036282}
-  m_Center: {x: 0.025768459, y: -0.014339924, z: 0.9914456}
 --- !u!114 &2084317120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5460,7 +5459,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 593520680}
-  m_Colliders: []
+  m_Colliders:
+  - {fileID: 82972839}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -5489,8 +5489,22 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2084317120}
-        m_MethodName: rotateRotateThisObject
-        m_Mode: 1
+        m_MethodName: set_isHov
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  m_OnDeactivate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2084317120}
+        m_MethodName: set_isHov
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5499,11 +5513,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnDeactivate:
-    m_PersistentCalls:
-      m_Calls: []
   m_CustomReticle: {fileID: 0}
-  m_AttachTransform: {fileID: 0}
+  m_AttachTransform: {fileID: 2084317118}
   m_AttachEaseInTime: 0.15
   m_MovementType: 0
   m_TrackPosition: 1
