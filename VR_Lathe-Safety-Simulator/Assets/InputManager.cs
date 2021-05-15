@@ -84,7 +84,7 @@ public class InputManager : MonoBehaviour
         bool secondsButtonValue = false;
         InputFeatureUsage<bool> secondsButtonUsage = CommonUsages.secondaryButton;
 
-        if (device.TryGetFeatureValue(secondsButtonUsage, out secondsButtonValue) && secondsButtonValue)
+        if (device.TryGetFeatureValue(secondsButtonUsage, out secondsButtonValue) /*&& secondsButtonValue*/)
         {
             secondsButtonIsPressed = true;
             Debug.Log($"SecondaryButton activated {secondsButtonValue} on {xRNode}");
@@ -127,7 +127,7 @@ public class InputManager : MonoBehaviour
         float gripValue;
         InputFeatureUsage<float> gripUsage = CommonUsages.grip;
 
-        if (device.TryGetFeatureValue(gripUsage, out gripValue) /*&& gripValue > 0 && !gripIsPressed*/)
+        if (device.TryGetFeatureValue(gripUsage, out gripValue) && gripValue > 0 && !gripIsPressed)
         //targetDevices.TryGetFeatureValue(CommonUsages.grip, out float gripValue
         {
             gripIsPressed = true;
