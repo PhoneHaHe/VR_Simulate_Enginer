@@ -16,6 +16,7 @@ public class InputManager : MonoBehaviour
     //to avoid repeat readings
     private bool triggerIsPressed;
     private bool primaryButtonIsPressed;
+    private bool secondsButtonIsPressed;
     private bool primary2DAxisIsChosen;
     private Vector2 primary2DAxisValue = Vector2.zero;
     private Vector2 prevPrimary2DAxisValue;
@@ -69,6 +70,20 @@ public class InputManager : MonoBehaviour
             Debug.Log($"PrimaryButton deactivated {primaryButtonValue} on {xRNode}");
         }
 
+        bool secondsButtonValue = false;
+        InputFeatureUsage<bool> secondsButtonUsage = CommonUsages.secondaryButton;
+
+        if (device.TryGetFeatureValue(secondsButtonUsage, out secondsButtonValue) && secondsButtonValue && !secondsButtonIsPressed)
+        {
+            secondsButtonIsPressed = true;
+            Debug.Log($"PrimaryButton activated {secondsButtonValue} on {xRNode}");
+        }
+        else if (!primaryButtonValue && primaryButtonIsPressed)
+        {
+            secondsButtonIsPressed = false;
+            Debug.Log($"PrimaryButton deactivated {secondsButtonValue} on {xRNode}");
+        }
+
         // capturing primary 2D Axis changes and release
         InputFeatureUsage<Vector2> primary2DAxisUsage = CommonUsages.primary2DAxis;
         // make sure the value is not zero and that it has changed
@@ -82,6 +97,8 @@ public class InputManager : MonoBehaviour
         {
             Debug.Log($"Nope, prev value is {prevPrimary2DAxisValue} and the new value is {primary2DAxisValue}");
         } */
+
+
         if (device.TryGetFeatureValue(primary2DAxisUsage, out primary2DAxisValue) && primary2DAxisValue != Vector2.zero && !primary2DAxisIsChosen)
         {
             prevPrimary2DAxisValue = primary2DAxisValue;
