@@ -11,6 +11,7 @@ public class Rotation : MonoBehaviour
 
     public bool rotationByPositiveBool = false;
     public bool rotationByNegativeBool = false;
+    public bool playedSound = false;
 
     private ButtonStrucer button;
 
@@ -29,7 +30,6 @@ public class Rotation : MonoBehaviour
         _light = lightObject.GetComponent<Light>();
         _light.enabled = false;
 
-        
     }
 
     // Update is called once per frame
@@ -43,21 +43,14 @@ public class Rotation : MonoBehaviour
             if (rotationByPositiveBool)
             {
                 rotationByPositiveValue();
-                chuckSound2.Play();
-
             }
             else if (rotationByNegativeBool)
             {
                 rotationByNegativeValue();
             }
-            
+            SoundPlayed();
         }
-        if (rotateIsActive == false)
-        {
-            chuckSound2.Stop();
-        }
-            
-
+           
     }
 
     void FixedUpdate()
@@ -74,6 +67,7 @@ public class Rotation : MonoBehaviour
             {
                 rotationByNegativeValue();
             }
+            SoundPlayed();
         }
     }
 
@@ -108,12 +102,14 @@ public class Rotation : MonoBehaviour
     {
         rotationByPositiveBool = true;
         rotationByNegativeBool = false;
+        playedSound = true;
     }
 
     public void isSwitchSelectNegative()
     {
         rotationByPositiveBool = false;
         rotationByNegativeBool = true;
+        playedSound = true;
 
     }
 
@@ -121,6 +117,22 @@ public class Rotation : MonoBehaviour
     {
         rotationByPositiveBool = false;
         rotationByNegativeBool = false;
+        playedSound = false;
+    }
+
+    public void SoundPlayed() {
+
+        if (playedSound == true)
+        {
+            chuckSound2.Play();
+        }
+        else {
+            chuckSound2.Stop();
+        }
+
+        if (rotateIsActive == false) {
+            playedSound = false;
+        }
     }
 
     void OnTriggerEnter(Collider other)
@@ -132,11 +144,11 @@ public class Rotation : MonoBehaviour
         {
 
             if (rotateIsActive == true) {
+                if(rotationByPositiveBool || rotationByNegativeBool == true) { 
                 Debug.LogError("HandPlayer Tracking " + "Hand Dramage");
                 _light.enabled = true;
                 alert.Play();
-
-
+                }
             } 
         }
     }
