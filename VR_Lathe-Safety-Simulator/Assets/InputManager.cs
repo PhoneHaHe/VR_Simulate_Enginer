@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class InputManager : MonoBehaviour
 {
     [SerializeField]
-    public XRNode xRNode;
+    public XRNode xRNode = XRNode.RightHand;
 
     private List<InputDevice> devices = new List<InputDevice>();
 
@@ -25,6 +25,7 @@ public class InputManager : MonoBehaviour
     void GetDevice()
     {
         InputDevices.GetDevicesAtXRNode(xRNode, devices);
+        device = devices[0];
     }
 
     void OnEnable()
@@ -73,15 +74,15 @@ public class InputManager : MonoBehaviour
         bool secondsButtonValue = false;
         InputFeatureUsage<bool> secondsButtonUsage = CommonUsages.secondaryButton;
 
-        if (device.TryGetFeatureValue(secondsButtonUsage, out secondsButtonValue) && secondsButtonValue && !secondsButtonIsPressed)
+        if (device.TryGetFeatureValue(secondsButtonUsage, out secondsButtonValue) && secondsButtonValue)
         {
             secondsButtonIsPressed = true;
-            Debug.Log($"PrimaryButton activated {secondsButtonValue} on {xRNode}");
+            Debug.Log($"SecondaryButton activated {secondsButtonValue} on {xRNode}");
         }
-        else if (!primaryButtonValue && primaryButtonIsPressed)
+        else if (!secondsButtonValue && secondsButtonIsPressed)
         {
             secondsButtonIsPressed = false;
-            Debug.Log($"PrimaryButton deactivated {secondsButtonValue} on {xRNode}");
+            Debug.Log($"SecondaryButton deactivated {secondsButtonValue} on {xRNode}");
         }
 
         // capturing primary 2D Axis changes and release
