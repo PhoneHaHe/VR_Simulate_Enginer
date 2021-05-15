@@ -37,14 +37,16 @@ public class Rotation : MonoBehaviour
 
         if (rotateIsActive == true)
         {
-            chuckSound2.Play();
+            
             if (rotationByPositiveBool)
             {
                 rotationByPositiveValue();
+                chuckSound2.Play();
             }
             else if (rotationByNegativeBool)
             {
                 rotationByNegativeValue();
+                chuckSound2.Play();
             }
             
         }
