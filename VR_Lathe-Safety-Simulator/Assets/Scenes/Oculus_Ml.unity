@@ -1992,12 +1992,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 713097739}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &776693747 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9170315082374127934, guid: b01dd34157200124fbd0c7f853eb8d95,
-    type: 3}
-  m_PrefabInstance: {fileID: 6515027151661998517}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &789809266
 GameObject:
   m_ObjectHideFlags: 0
@@ -4445,7 +4439,6 @@ MonoBehaviour:
   rotationByPositiveBool: 0
   rotationByNegativeBool: 0
   light: {fileID: 703648050}
-  chuckSound2: {fileID: 1706158532}
 --- !u!65 &1706158530
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5488,7 +5481,18 @@ MonoBehaviour:
       m_Calls: []
   m_OnActivate:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2084317120}
+        m_MethodName: rotateRotateThisObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
@@ -18167,7 +18171,7 @@ PrefabInstance:
     - target: {fileID: 6515027152913312368, guid: b01dd34157200124fbd0c7f853eb8d95,
         type: 3}
       propertyPath: m_ActivateUsage
-      value: 6
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6515027152913312370, guid: b01dd34157200124fbd0c7f853eb8d95,
         type: 3}
@@ -18208,31 +18212,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnSelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 776693747}
+      objectReference: {fileID: 6515027151661998519}
     - target: {fileID: 6515027152913312370, guid: b01dd34157200124fbd0c7f853eb8d95,
         type: 3}
       propertyPath: m_OnSelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetActive
+      value: set_enableRightTeleport
       objectReference: {fileID: 0}
     - target: {fileID: 6515027152913312370, guid: b01dd34157200124fbd0c7f853eb8d95,
         type: 3}
       propertyPath: m_OnSelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 2084317120}
+      objectReference: {fileID: 6515027151661998518}
     - target: {fileID: 6515027152913312370, guid: b01dd34157200124fbd0c7f853eb8d95,
         type: 3}
       propertyPath: m_OnSelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: rotateRotateThisObject
+      value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 6515027152913312370, guid: b01dd34157200124fbd0c7f853eb8d95,
         type: 3}
       propertyPath: m_OnSelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6515027152913312370, guid: b01dd34157200124fbd0c7f853eb8d95,
         type: 3}
       propertyPath: m_OnSelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6515027152913312370, guid: b01dd34157200124fbd0c7f853eb8d95,
+        type: 3}
+      propertyPath: m_OnSelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6515027152913312370, guid: b01dd34157200124fbd0c7f853eb8d95,
+        type: 3}
+      propertyPath: m_OnSelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6515027152913312370, guid: b01dd34157200124fbd0c7f853eb8d95,
+        type: 3}
+      propertyPath: m_OnSelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6515027153019484674, guid: b01dd34157200124fbd0c7f853eb8d95,
         type: 3}
@@ -18251,6 +18270,24 @@ PrefabInstance:
       objectReference: {fileID: 593520680}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b01dd34157200124fbd0c7f853eb8d95, type: 3}
+--- !u!1 &6515027151661998518 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6515027152913312374, guid: b01dd34157200124fbd0c7f853eb8d95,
+    type: 3}
+  m_PrefabInstance: {fileID: 6515027151661998517}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6515027151661998519 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6515027151900039850, guid: b01dd34157200124fbd0c7f853eb8d95,
+    type: 3}
+  m_PrefabInstance: {fileID: 6515027151661998517}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 051939b9e4c555448a80473745e5a380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6523208686006884262
 GameObject:
   m_ObjectHideFlags: 0
