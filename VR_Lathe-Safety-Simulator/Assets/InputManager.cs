@@ -25,7 +25,7 @@ public class InputManager : MonoBehaviour
     void GetDevice()
     {
         InputDevices.GetDevicesAtXRNode(xRNode, devices);
-        device = devices[0];
+        /*device = devices[0];*/
     }
 
     void OnEnable()
