@@ -17,7 +17,7 @@ public class Rotation : MonoBehaviour
     public GameObject light;
     private Light _light;
     private Renderer _originColorBoard;
-    public AudioClip ChuckSound2;
+    /*public AudioClip ChuckSound2;*/
     void Start()
     {
         button = GameObject.Find("Green_button1").GetComponent<ButtonStrucer>();

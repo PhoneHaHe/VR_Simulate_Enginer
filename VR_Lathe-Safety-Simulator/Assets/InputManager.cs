@@ -84,7 +84,7 @@ public class InputManager : MonoBehaviour
         bool secondsButtonValue = false;
         InputFeatureUsage<bool> secondsButtonUsage = CommonUsages.secondaryButton;
 
-        if (device.TryGetFeatureValue(secondsButtonUsage, out secondsButtonValue) /*&& secondsButtonValue*/)
+        if (device.TryGetFeatureValue(secondsButtonUsage, out secondsButtonValue) && secondsButtonValue)
         {
             secondsButtonIsPressed = true;
             Debug.Log($"SecondaryButton activated {secondsButtonValue} on {xRNode}");
