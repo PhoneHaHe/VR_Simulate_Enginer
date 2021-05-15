@@ -19,6 +19,7 @@ public class Rotation : MonoBehaviour
     private Renderer _originColorBoard;
 
     private AudioSource chuckSound2;
+    public AudioSource alert;
     void Start()
     {
         button = GameObject.Find("Green_button1").GetComponent<ButtonStrucer>();
@@ -130,7 +131,8 @@ public class Rotation : MonoBehaviour
             if (rotateIsActive == true) {
                 Debug.LogError("HandPlayer Tracking " + "Hand Dramage");
                 _light.enabled = true;
-                
+                alert.Play();
+
 
             } 
         }
@@ -141,6 +143,7 @@ public class Rotation : MonoBehaviour
 
         if (other.CompareTag("HandPlayer")) {
             _light.enabled = false;
+            alert.Stop();
         }
 
     }
