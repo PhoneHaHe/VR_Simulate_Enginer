@@ -8,6 +8,7 @@ public class XROffsetGrabInteractable : XRGrabInteractable
     // Start is called before the first frame update
     private Vector3 intialAttachLocalPos;
     private Quaternion intialAttachLocalRot;
+    public AudioSource soundGuard;
     void Start()
     {
         if(!attachTransform)
@@ -32,6 +33,7 @@ public class XROffsetGrabInteractable : XRGrabInteractable
             attachTransform.localRotation = intialAttachLocalRot;
         }
         base.OnSelectEntered(interactor);
+        soundGuard.Play();
     }
     
 }
