@@ -2054,6 +2054,12 @@ Transform:
   m_Father: {fileID: 1122158352}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &823644927 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9170315082374127934, guid: b01dd34157200124fbd0c7f853eb8d95,
+    type: 3}
+  m_PrefabInstance: {fileID: 6515027151661998517}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &836142256
 GameObject:
   m_ObjectHideFlags: 0
@@ -18197,7 +18203,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnSelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 2084317120}
+      objectReference: {fileID: 0}
     - target: {fileID: 6515027152913312370, guid: b01dd34157200124fbd0c7f853eb8d95,
         type: 3}
       propertyPath: m_OnSelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
@@ -18222,7 +18228,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnSelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 6515027151661998518}
+      objectReference: {fileID: 823644927}
     - target: {fileID: 6515027152913312370, guid: b01dd34157200124fbd0c7f853eb8d95,
         type: 3}
       propertyPath: m_OnSelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -18270,12 +18276,6 @@ PrefabInstance:
       objectReference: {fileID: 593520680}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b01dd34157200124fbd0c7f853eb8d95, type: 3}
---- !u!1 &6515027151661998518 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6515027152913312374, guid: b01dd34157200124fbd0c7f853eb8d95,
-    type: 3}
-  m_PrefabInstance: {fileID: 6515027151661998517}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6515027151661998519 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6515027151900039850, guid: b01dd34157200124fbd0c7f853eb8d95,
