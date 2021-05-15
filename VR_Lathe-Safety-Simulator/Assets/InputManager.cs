@@ -7,7 +7,13 @@ using UnityEngine.Events;
 public class InputManager : MonoBehaviour
 {
     [SerializeField]
-    public XRNode xRNode = XRNode.RightHand;
+    XRNode xRNode = XRNode.RightHand;
+
+    public XRNode controllerNode
+        {
+            get => xRNode;
+            set => xRNode = value;
+        }
 
     private List<InputDevice> devices = new List<InputDevice>();
 
@@ -25,7 +31,11 @@ public class InputManager : MonoBehaviour
     void GetDevice()
     {
         InputDevices.GetDevicesAtXRNode(xRNode, devices);
-        /*device = devices[0];*/
+        if (devices.Count > 0)
+        {
+            device = devices[0];
+        }
+
     }
 
     void OnEnable()
@@ -103,7 +113,7 @@ public class InputManager : MonoBehaviour
         if (device.TryGetFeatureValue(primary2DAxisUsage, out primary2DAxisValue) && primary2DAxisValue != Vector2.zero && !primary2DAxisIsChosen)
         {
             prevPrimary2DAxisValue = primary2DAxisValue;
-            primary2DAxisIsChosen = true;  
+            primary2DAxisIsChosen = true;
             Debug.Log($"Primary2DAxis value activated {primary2DAxisValue} on {xRNode}");
         }
         else if (primary2DAxisValue == Vector2.zero && primary2DAxisIsChosen)
@@ -117,7 +127,8 @@ public class InputManager : MonoBehaviour
         float gripValue;
         InputFeatureUsage<float> gripUsage = CommonUsages.grip;
 
-        if (device.TryGetFeatureValue(gripUsage, out gripValue) && gripValue > 0 && !gripIsPressed)
+        if (device.TryGetFeatureValue(gripUsage, out gripValue) /*&& gripValue > 0 && !gripIsPressed*/)
+        //targetDevices.TryGetFeatureValue(CommonUsages.grip, out float gripValue
         {
             gripIsPressed = true;
             Debug.Log($"Grip value {gripValue} activated on {xRNode}");
