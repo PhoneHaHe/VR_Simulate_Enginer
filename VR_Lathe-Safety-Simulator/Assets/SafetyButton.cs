@@ -8,7 +8,6 @@ public class SafetyButton : MonoBehaviour
     public bool buttonSafeHit = false;
     private GameObject button;
     private float buttonReturnToDistanceY = 0.0044f;
-    private float buttonReturnToDistanceZ = 0.0007f;
     private float buttonReturnSpeed = 0.0001f;
     private float buttonOriginY;
     private float buttonOriginZ;
@@ -21,6 +20,7 @@ public class SafetyButton : MonoBehaviour
     //ref to Main Button
     private ButtonStrucer buttonMain;
     // Start is called before the first frame update
+    public AudioSource click;
     void Start()
     {
         button = transform.GetChild(0).gameObject;
@@ -49,15 +49,16 @@ public class SafetyButton : MonoBehaviour
 
             isSafeActivate = !isSafeActivate;
 
-            button.transform.position = new Vector3(button.transform.position.x, button.transform.position.y - buttonReturnToDistanceY, button.transform.position.z - buttonReturnToDistanceZ);
+            button.transform.position = new Vector3(button.transform.position.x, button.transform.position.y - buttonReturnToDistanceY, button.transform.position.z);
 
             safetyActivate();
+            click.Play();
 
         }
 
-        if (button.transform.position.y < buttonOriginY && button.transform.position.z < buttonOriginZ)
+        if (button.transform.position.y < buttonOriginY)
         {
-            button.transform.position += new Vector3(0, buttonReturnSpeed, buttonReturnSpeed);
+            button.transform.position += new Vector3(0, buttonReturnSpeed, 0);
         }
     }
 
@@ -71,6 +72,7 @@ public class SafetyButton : MonoBehaviour
             Debug.Log("HandPlayer Tracking");
             canHitAgain = Time.time + buttonCanHitAgainTime;
             buttonSafeHit = true;
+
         }
     }
 
