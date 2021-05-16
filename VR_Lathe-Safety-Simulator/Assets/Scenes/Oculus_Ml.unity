@@ -18315,6 +18315,11 @@ PrefabInstance:
       propertyPath: m_TurnAmount
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 6515027151900039848, guid: b01dd34157200124fbd0c7f853eb8d95,
+        type: 3}
+      propertyPath: m_System
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6515027151900039849, guid: b01dd34157200124fbd0c7f853eb8d95,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18369,6 +18374,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6515027151900039851, guid: b01dd34157200124fbd0c7f853eb8d95,
+        type: 3}
+      propertyPath: m_XRRig
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6515027151900039855, guid: b01dd34157200124fbd0c7f853eb8d95,
         type: 3}
