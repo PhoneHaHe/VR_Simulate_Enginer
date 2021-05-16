@@ -2,15 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class PlayedSound : MonoBehaviour
 
 {
 
-    public AudioSource Guardclose;
+    public AudioClip _Guardclose;
+    public AudioClip _GuardOpen;
+
+    AudioSource source;
+
+    void Start() {
+        source = gameObject.AddComponent<AudioSource>();
+    }
     
 
-    void PlaySound()
+    public void WhenOpenIt()
     {
-        Guardclose.Play();
+        source.PlayOneShot(_GuardOpen);
+    }
+
+    
+    public void WhenCloseIt()
+    {
+        source.PlayOneShot(_Guardclose);
     }
 }
