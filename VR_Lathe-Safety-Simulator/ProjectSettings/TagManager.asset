@@ -7,6 +7,8 @@ TagManager:
   - HandPlayer
   - ToolEnviorment
   - Safety Glasses
+  - TargetWork
+  - RectangleRodTypeSpanner
   layers:
   - Default
   - TransparentFX
