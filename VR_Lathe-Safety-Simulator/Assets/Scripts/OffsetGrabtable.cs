@@ -9,6 +9,7 @@ public class OffsetGrabtable : XRGrabInteractable
     private Vector3 intialAttachLocalPos = Vector3.zero;
     private Quaternion intialAttachLocalRot = Quaternion.identity;
 
+    [System.Obsolete]
     protected override void OnSelectEntered(XRBaseInteractor interactor)
     {
 
@@ -34,6 +35,7 @@ public class OffsetGrabtable : XRGrabInteractable
 
     }
 
+    [System.Obsolete]
     protected override void OnSelectExited(XRBaseInteractor interactor)
     {
         base.OnSelectExited(interactor);

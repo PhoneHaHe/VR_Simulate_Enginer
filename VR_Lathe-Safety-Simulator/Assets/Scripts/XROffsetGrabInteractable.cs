@@ -21,6 +21,8 @@ public class XROffsetGrabInteractable : XRGrabInteractable
         intialAttachLocalRot = attachTransform.localRotation;
     }
 
+    
+    [System.Obsolete]
     protected override void OnSelectEntered(XRBaseInteractor interactor)
     {
         if(interactor is XRDirectInteractor)
