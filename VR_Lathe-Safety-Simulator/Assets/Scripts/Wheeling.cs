@@ -3,69 +3,145 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
 
-public class Wheeling : InputManager
+public class Wheeling : MonoBehaviour
 {
-    // public InputDeviceCharacteristics controllerCharacteristics;
-    // private InputDevice targetDevices;
-    // // Start is called before the first frame update
-    // void Start()
-    // {
-    //     List<InputDevice> devices = new List<InputDevice>();
+    // Object Target to management move
+    [SerializeField] private Transform targetx;
+    public Vector3 currentPositionOfPlatform;
+    public float MaxPosition;
+    public float MinPosition;
+    public float speeds;
+    public float rateRotate;
+    public bool isHoldThisWheel { get; set; } = false;
 
-    //     InputDevices.GetDevicesWithCharacteristics(controllerCharacteristics, devices);
-    // }
+    private InputDevice device;
+    private List<InputDevice> devices = new List<InputDevice>();
+    private bool primaryButtonIsPressed;
+    private bool secondsButtonIsPressed;
 
-    // // Update is called once per frame
-    // void Update()
-    // {
-    //     TryInitializeController();
-    // }
-    // void FixedUpdate() {
-    //     TryInitializeController();
-    // }
+    [SerializeField]
+    XRNode xRNode = XRNode.RightHand;
 
-    // void TryInitializeController() {
-
-    //     targetDevices.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonValue);
-    //     if (primaryButtonValue)
-    //     {
-    //         Debug.Log("Pressing Primary Button");
-    //     }
-
-    //     targetDevices.TryGetFeatureValue(CommonUsages.trigger, out float triggerValue);
-    //     if (triggerValue > 0.1f)
-    //     {
-    //         Debug.Log("Trigger pressed" + triggerValue);
-    //     }
-
-    //     targetDevices.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 primary2DAxisValue);
-    //     if (primary2DAxisValue != Vector2.zero)
-    //     {
-    //         Debug.Log("Primary Touchpad " + primary2DAxisValue);
-    //     }
-    // }
-
-    /*public bool isHov {get; set;} = false;
-    void Update()
+    public XRNode controllerNode
     {
-
-        rotateRotateThisObject();
-    }*/
-    public void rotateRotateThisObject()
+        get => xRNode;
+        set => xRNode = value;
+    }
+    void Start()
     {
+        this.currentPositionOfPlatform = targetx.transform.position;
+        Debug.LogError(targetx.name);
 
-        //if (isHov)
-        //{
-            Debug.Log("Call Function");
-            transform.Rotate(new Vector3(0, 10, 0));
-        //}
+        OnEnable();
     }
 
-    /*void OnTriggerStay(Collider other)
+    void GetDevice()
     {
-        if (other.CompareTag("HandPlayer"))
+        InputDevices.GetDevicesAtXRNode(xRNode, devices);
+        if (devices.Count > 0)
         {
-
+            device = devices[0];
         }
-    }*/
+
+    }
+
+    void OnEnable()
+    {
+        if (!device.isValid)
+        {
+            GetDevice();
+        }
+    }
+
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+
+
+        updatePosition();
+        if (isHoldThisWheel)
+        {
+            // capturing primary button press and release
+            bool primaryButtonValue = false;
+            InputFeatureUsage<bool> primaryButtonUsage = CommonUsages.primaryButton;
+
+            if (device.TryGetFeatureValue(primaryButtonUsage, out primaryButtonValue) && primaryButtonValue && !primaryButtonIsPressed)
+            {
+                primaryButtonIsPressed = true;
+
+                Debug.Log($"PrimaryButton activated {primaryButtonValue} {primaryButtonIsPressed} on {xRNode}");
+            }
+            else if (!primaryButtonValue && primaryButtonIsPressed)
+            {
+                primaryButtonIsPressed = false;
+                Debug.Log($"PrimaryButton deactivated {primaryButtonValue} on {xRNode}");
+            }
+
+            bool secondsButtonValue = false;
+            InputFeatureUsage<bool> secondsButtonUsage = CommonUsages.secondaryButton;
+
+            if (device.TryGetFeatureValue(secondsButtonUsage, out secondsButtonValue) && secondsButtonValue && !secondsButtonIsPressed)
+            {
+                secondsButtonIsPressed = true;
+
+                Debug.Log($"SecondaryButton activated {secondsButtonValue} {secondsButtonIsPressed} on {xRNode}");
+            }
+            else if (!secondsButtonValue && secondsButtonIsPressed)
+            {
+                secondsButtonIsPressed = false;
+                Debug.Log($"SecondaryButton deactivated {secondsButtonValue} on {xRNode}");
+            }
+
+
+            if (secondsButtonIsPressed)
+            {
+                if (currentPositionOfPlatform.z >= MinPosition)
+                {
+                    movePlatformByEulerAngles();
+                }
+
+            }
+            if (primaryButtonIsPressed)
+            {
+                if (currentPositionOfPlatform.z <= MaxPosition )
+                {
+                    moveNegativePlatformByEulerAngles();
+                }
+            }
+        }
+
+
+    }
+
+    public void updateRotationOfValve(float angles)
+    {
+
+        var turn = transform.localEulerAngles.z;
+        /*turn = (turn > 180) ? turn - 360 : turn;*/
+        var speedRate = new Vector3(0, 0, angles * rateRotate); ;
+
+        transform.Rotate(speedRate);
+    }
+
+    private void movePlatformByEulerAngles()
+    {
+        var speed = -speeds;
+        var speedRate = new Vector3(0, 0, speed);
+        updateRotationOfValve(speed);
+        targetx.transform.position = targetx.transform.position + speedRate * Time.deltaTime;
+    }
+
+    private void moveNegativePlatformByEulerAngles()
+    {
+        var speed = speeds;
+        var speedRate = new Vector3(0, 0, speed);
+        updateRotationOfValve(speed);
+        targetx.transform.position = targetx.transform.position + speedRate * Time.deltaTime;
+    }
+
+    public void updatePosition()
+    {
+
+        currentPositionOfPlatform = targetx.transform.position;
+    }
 }

@@ -161,12 +161,24 @@ public class Rotation : MonoBehaviour
                 }
             } 
         }
+        if (other.CompareTag("LatheApornPlatform")) {
+            /*Debug.Log("LatheApornPlatform");*/
+            if (rotateIsActive == true)
+            {
+                if (rotationByPositiveBool || rotationByNegativeBool == true)
+                {
+                    alert.Play();
+                    _light.enabled = true;
+                }
+            }
+        }
+        /*Debug.Log($"{other.name}");*/
     }
 
     void OnTriggerExit(Collider other) {
 
 
-        if (other.CompareTag("HandPlayer")) {
+        if (other.CompareTag("HandPlayer") || other.CompareTag("LatheApornPlatform")) {
             _light.enabled = false;
             alert.Stop();
         }

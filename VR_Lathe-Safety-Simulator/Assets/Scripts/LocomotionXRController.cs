@@ -13,7 +13,7 @@ public class LocomotionXRController : MonoBehaviour
 
     public XRRayInteractor leftInteractorRay;
     public XRRayInteractor rightInteractorRay;
-    public bool enableLeftTeleport {get; set;}= true;
+    public bool enableLeftTeleport { get; set; } = true;
     public bool enableRightTeleport {get; set;}= true;
 
     // Update is called once per frame

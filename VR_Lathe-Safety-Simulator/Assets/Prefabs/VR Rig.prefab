@@ -892,8 +892,8 @@ GameObject:
   - component: {fileID: 6515027151900039851}
   - component: {fileID: 6515027151900039848}
   - component: {fileID: 6515027151900039850}
-  - component: {fileID: 6515027151900039829}
   - component: {fileID: 6515027151900039828}
+  - component: {fileID: 6515027151900039829}
   - component: {fileID: 6515027151900039831}
   m_Layer: 10
   m_Name: VR Rig
@@ -980,6 +980,24 @@ MonoBehaviour:
   activationThreshold: 0.1
   leftInteractorRay: {fileID: 0}
   rightInteractorRay: {fileID: 0}
+--- !u!143 &6515027151900039828
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6515027151900039855}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.15
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &6515027151900039829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -999,24 +1017,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   additionalHeight: 0.2
---- !u!143 &6515027151900039828
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6515027151900039855}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.15
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &6515027151900039831
 MonoBehaviour:
   m_ObjectHideFlags: 0

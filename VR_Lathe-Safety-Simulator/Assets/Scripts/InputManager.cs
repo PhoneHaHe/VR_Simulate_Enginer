@@ -48,11 +48,12 @@ public class InputManager : MonoBehaviour
 
     void Update()
     {
-        if (!device.isValid)
-        {
-            GetDevice();
-        }
+        OnEnable();
 
+        tryGetActionValue();
+    }
+
+    void tryGetActionValue() {
         // capturing trigger button press and release    
         bool triggerButtonValue = false;
         if (device.TryGetFeatureValue(CommonUsages.triggerButton, out triggerButtonValue) && triggerButtonValue && !triggerIsPressed)

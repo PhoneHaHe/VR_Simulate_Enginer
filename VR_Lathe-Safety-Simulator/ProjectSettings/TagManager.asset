@@ -9,6 +9,8 @@ TagManager:
   - Safety Glasses
   - TargetWork
   - RectangleRodTypeSpanner
+  - HeadCutter
+  - LatheApornPlatform
   layers:
   - Default
   - TransparentFX

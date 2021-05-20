@@ -3,20 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
 
-public class WheelController : MonoBehaviour
+public class Wheeled : MonoBehaviour
 {
     // Object Target to management move
-    public GameObject target;
+    [SerializeField] private Transform targetx;
     public Vector3 currentPositionOfPlatform;
-    public float currentEulerAngles = 0;
     public float MaxPosition;
     public float MinPosition;
+    public float speeds;
+    public float rateRotate;
     public bool isHoldThisWheel { get; set; } = false;
 
     private InputDevice device;
     private List<InputDevice> devices = new List<InputDevice>();
     private bool primaryButtonIsPressed;
     private bool secondsButtonIsPressed;
+
     [SerializeField]
     XRNode xRNode = XRNode.RightHand;
 
@@ -27,9 +29,8 @@ public class WheelController : MonoBehaviour
     }
     void Start()
     {
-        this.currentPositionOfPlatform = target.transform.position;
-        /*Debug.LogError(target.name);*/
-        
+        this.currentPositionOfPlatform = targetx.transform.position;
+
         OnEnable();
     }
 
@@ -57,7 +58,8 @@ public class WheelController : MonoBehaviour
 
 
         updatePosition();
-        if (isHoldThisWheel) {
+        if (isHoldThisWheel)
+        {
             // capturing primary button press and release
             bool primaryButtonValue = false;
             InputFeatureUsage<bool> primaryButtonUsage = CommonUsages.primaryButton;
@@ -65,7 +67,7 @@ public class WheelController : MonoBehaviour
             if (device.TryGetFeatureValue(primaryButtonUsage, out primaryButtonValue) && primaryButtonValue && !primaryButtonIsPressed)
             {
                 primaryButtonIsPressed = true;
-                
+
                 Debug.Log($"PrimaryButton activated {primaryButtonValue} {primaryButtonIsPressed} on {xRNode}");
             }
             else if (!primaryButtonValue && primaryButtonIsPressed)
@@ -80,7 +82,7 @@ public class WheelController : MonoBehaviour
             if (device.TryGetFeatureValue(secondsButtonUsage, out secondsButtonValue) && secondsButtonValue && !secondsButtonIsPressed)
             {
                 secondsButtonIsPressed = true;
-                
+
                 Debug.Log($"SecondaryButton activated {secondsButtonValue} {secondsButtonIsPressed} on {xRNode}");
             }
             else if (!secondsButtonValue && secondsButtonIsPressed)
@@ -92,19 +94,21 @@ public class WheelController : MonoBehaviour
 
             if (secondsButtonIsPressed)
             {
-                if (currentPositionOfPlatform.x >= MinPosition ) {
+                if (currentPositionOfPlatform.x >= MinPosition)
+                {
                     movePlatformByEulerAngles();
                 }
-                
+
             }
             if (primaryButtonIsPressed)
             {
-                if (currentPositionOfPlatform.x <= MaxPosition) {
+                if (currentPositionOfPlatform.x <= MaxPosition)
+                {
                     moveNegativePlatformByEulerAngles();
-                } 
+                }
             }
         }
-        
+
 
     }
 
@@ -113,30 +117,30 @@ public class WheelController : MonoBehaviour
 
         var turn = transform.localEulerAngles.z;
         /*turn = (turn > 180) ? turn - 360 : turn;*/
-        var speedRate = new Vector3(0, 0, angles*10);;
+        var speedRate = new Vector3(0,0, angles * rateRotate); ;
 
-        transform.Rotate(speedRate);
+        transform.Rotate(-speedRate);
     }
 
     private void movePlatformByEulerAngles()
     {
-        var speed = -0.1f;
+        var speed = - speeds;
         var speedRate = new Vector3(speed, 0, 0);
         updateRotationOfValve(speed);
-        target.transform.position = target.transform.position + speedRate * Time.deltaTime;
+        targetx.transform.position = targetx.transform.position + speedRate * Time.deltaTime;
     }
 
     private void moveNegativePlatformByEulerAngles()
     {
-        var speed = 0.1f;
+        var speed = speeds;
         var speedRate = new Vector3(speed, 0, 0);
         updateRotationOfValve(speed);
-        target.transform.position = target.transform.position + speedRate * Time.deltaTime;
+        targetx.transform.position = targetx.transform.position + speedRate * Time.deltaTime;
     }
 
-    public void updatePosition() {
+    public void updatePosition()
+    {
 
-        currentPositionOfPlatform = target.transform.position;
+        currentPositionOfPlatform = targetx.transform.position;
     }
-
 }
