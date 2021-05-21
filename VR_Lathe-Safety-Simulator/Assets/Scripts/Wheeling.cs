@@ -30,7 +30,6 @@ public class Wheeling : MonoBehaviour
     void Start()
     {
         this.currentPositionOfPlatform = targetx.transform.position;
-        Debug.LogError(targetx.name);
 
         OnEnable();
     }

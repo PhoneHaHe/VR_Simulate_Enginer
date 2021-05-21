@@ -173,6 +173,14 @@ public class Rotation : MonoBehaviour
             }
         }
         /*Debug.Log($"{other.name}");*/
+        if (rotateIsActive == true)
+        {
+            if (rotationByPositiveBool || rotationByNegativeBool == true)
+            {
+                alert.Play();
+                _light.enabled = true;
+            }
+        }
     }
 
     void OnTriggerExit(Collider other) {
