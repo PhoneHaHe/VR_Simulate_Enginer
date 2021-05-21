@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2708,7 +2708,7 @@ Transform:
   - {fileID: 964904370}
   - {fileID: 516945773}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &598667196
 MonoBehaviour:
@@ -3867,12 +3867,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 964904370}
-  - component: {fileID: 964904374}
-  - component: {fileID: 964904373}
   - component: {fileID: 964904372}
   - component: {fileID: 964904371}
   m_Layer: 0
-  m_Name: Head Drop zone
+  m_Name: CuttingHeadLocation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3909,8 +3907,8 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_AttachTransform: {fileID: 13814152}
-  m_StartingSelectedInteractable: {fileID: 8296172668843478919}
+  m_AttachTransform: {fileID: 0}
+  m_StartingSelectedInteractable: {fileID: 0}
   m_HoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -3942,66 +3940,19 @@ MonoBehaviour:
   m_InteractableHoverScale: 1
   m_RecycleDelayTime: 1
   targetTag: HeadCutter
---- !u!65 &964904372
-BoxCollider:
+--- !u!135 &964904372
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 964904369}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.39861083, y: 0.1672548, z: 0.9267986}
-  m_Center: {x: -0.050949454, y: -0.020071566, z: 0.16147912}
---- !u!23 &964904373
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 964904369}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &964904374
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 964904369}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Radius: 0.15
+  m_Center: {x: 0, y: 0, z: 0.15}
 --- !u!1 &972944946
 GameObject:
   m_ObjectHideFlags: 0
@@ -10236,7 +10187,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2933361899590929535}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Group2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12038,7 +11989,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 582691217688611453}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Group1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14603,7 +14554,7 @@ GameObject:
   - component: {fileID: 8556591685235352540}
   - component: {fileID: 3481919018630401977}
   - component: {fileID: 5417555812977830557}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17972,7 +17923,7 @@ GameObject:
   - component: {fileID: 3562492036543060141}
   - component: {fileID: 3072290230623580521}
   - component: {fileID: 4459439721496191553}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19212,14 +19163,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8296172668843478917}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 1.5009999, y: 0.8757, z: -1.252}
+  m_LocalPosition: {x: 1.4483, y: 0.8757, z: -1.0489}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 2059085641615582551}
   - {fileID: 5848913454500686923}
   - {fileID: 2096085867593343610}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &5006512736404083497
 Transform:
@@ -19367,7 +19318,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2059085641615582551}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ___________1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19445,7 +19396,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2096085867593343610}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: screw_______1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24412,7 +24363,7 @@ GameObject:
   - component: {fileID: 5842586292847056935}
   - component: {fileID: 3825426483067897555}
   - component: {fileID: 5734414120195919913}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26573,7 +26524,7 @@ GameObject:
   - component: {fileID: 8296172668843478918}
   - component: {fileID: 8296172668843478920}
   - component: {fileID: 8296172668843478919}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CutingTool1
   m_TagString: HeadCutter
   m_Icon: {fileID: 0}
@@ -27092,7 +27043,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5848913454500686923}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ___1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27870,7 +27821,7 @@ GameObject:
   - component: {fileID: 1902797300871519867}
   - component: {fileID: 5447112956076122194}
   - component: {fileID: 8886859559092088399}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
