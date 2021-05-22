@@ -64,6 +64,8 @@ public class Rotation : MonoBehaviour
     {
         rotateIsActive = button.isActivate;
 
+        speedRate = FeedSpeedController._currentRateSpeed;
+
         if (rotateIsActive == true)
         {
             if (rotationByPositiveBool)

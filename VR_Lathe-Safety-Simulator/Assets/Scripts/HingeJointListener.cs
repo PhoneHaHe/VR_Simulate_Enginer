@@ -32,8 +32,8 @@ public class HingeJointListener : MonoBehaviour
     {
         hinge = GetComponent<HingeJoint>();
         rotateObject = targetObject.GetComponent<Rotation>();
-        Debug.Log("Max: " + hinge.limits.max);
-        Debug.Log("Min: " + hinge.limits.min);
+        /*Debug.Log("Max: " + hinge.limits.max);
+        Debug.Log("Min: " + hinge.limits.min);*/
 
     }
 

@@ -26,7 +26,6 @@ public class ButtonStrucer : MonoBehaviour
         if (buttonLight != null)
         {
             buttonLight.enabled = !buttonLight.enabled;
-            Debug.Log("buttonLight is off");
         }
 
         button = transform.GetChild(0).gameObject;
