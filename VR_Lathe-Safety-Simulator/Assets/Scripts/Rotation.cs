@@ -191,6 +191,9 @@ public class Rotation : MonoBehaviour
             alert.Stop();
         }
 
+        _light.enabled = false;
+        alert.Stop();
+
     }
 
 }

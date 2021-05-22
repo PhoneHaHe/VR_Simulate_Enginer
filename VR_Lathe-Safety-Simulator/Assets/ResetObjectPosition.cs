@@ -8,8 +8,8 @@ public class ResetObjectPosition : MonoBehaviour
     XRGrabInteractable m_GrabInteractable;
 
         [Tooltip("The Transform that the object will return to")]
-        [SerializeField] Vector3 returnToPosition;
-        [SerializeField] float resetDelayTime;
+        [SerializeField] Vector3 returnToPosition = Vector3.zero;
+        [SerializeField] float resetDelayTime = 3;
         protected bool shouldReturnHome { get; set; }
         bool isController;
 

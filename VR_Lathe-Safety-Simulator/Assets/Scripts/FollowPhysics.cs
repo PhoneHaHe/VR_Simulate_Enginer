@@ -27,8 +27,6 @@ public class FollowPhysics : MonoBehaviour
             if (target.position == owe_position && target.rotation == owe_rotate) {
 
               isSet = false;
-                Debug.LogError(target.transform.position);
-                Debug.LogError(target.transform.rotation);
             }
         }
     }
