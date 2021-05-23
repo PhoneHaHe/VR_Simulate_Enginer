@@ -11,6 +11,7 @@ TagManager:
   - RectangleRodTypeSpanner
   - HeadCutter
   - LatheApornPlatform
+  - Blade
   layers:
   - Default
   - TransparentFX

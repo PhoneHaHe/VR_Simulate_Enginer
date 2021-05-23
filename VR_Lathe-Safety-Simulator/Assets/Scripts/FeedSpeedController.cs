@@ -25,18 +25,19 @@ public class FeedSpeedController : MonoBehaviour
     public bool _currentRateSpeedMax = false;
 
     public static int _currentRateSpeed = 0;
+    public List<int> _RateCanSelect;
     // Start is called before the first frame update
     void Start()
     {
         hinge = GetComponent<HingeJoint>();
-        _minRateSpeed = SpeedVolumeController.MinRateSpeed;
-        _maxRateSpeed = SpeedVolumeController.MaxRateSpeed;
+        UpdateSpeedRate();
         Debug.Log("Max: " + hinge.limits.max);
         Debug.Log("Min: " + hinge.limits.min);
     }
 
 
-    private void FixedUpdate() {
+    private void FixedUpdate()
+    {
         float angleWithMinLimit = Mathf.Abs(hinge.angle - hinge.limits.min);
         float angleWithMaxLimit = Mathf.Abs(hinge.angle - hinge.limits.max);
 
@@ -73,22 +74,51 @@ public class FeedSpeedController : MonoBehaviour
 
         if (_currentRateSpeedMin)
         {
-            _currentRateSpeed = 12;
+            _currentRateSpeed = _RateCanSelect[0];
         }
         else if (_currentRateSpeedMax)
         {
-            _currentRateSpeed = 100;
+            _currentRateSpeed = _RateCanSelect[1];
         }
-        else {
-            _currentRateSpeed = 20;
+        else
+        {
+            _currentRateSpeed = _RateCanSelect[2];
         }
     }
 
-    public void UpdateSpeedRate() {
+    public void UpdateSpeedRate()
+    {
         Debug.Log($"UpdateSpeedRate {SpeedVolumeController.MinRateSpeed}  {SpeedVolumeController.MaxRateSpeed}");
-    
+
         _minRateSpeed = SpeedVolumeController.MinRateSpeed;
         _maxRateSpeed = SpeedVolumeController.MaxRateSpeed;
+
+        _RateCanSelect = new List<int>();
+
+        if (_minRateSpeed == 54 && _maxRateSpeed == 215)
+        {
+
+            _RateCanSelect.Add(3);
+            _RateCanSelect.Add(6);
+            _RateCanSelect.Add(8);
+
+        }
+        else if (_minRateSpeed == 214 && _maxRateSpeed == 750)
+        {
+
+            _RateCanSelect.Add(8);
+            _RateCanSelect.Add(12);
+            _RateCanSelect.Add(15);
+
+        }
+        else if (_minRateSpeed == 750 && _maxRateSpeed == 750)
+        {
+
+            _RateCanSelect.Add(15);
+            _RateCanSelect.Add(20);
+            _RateCanSelect.Add(30);
+
+        }
 
         Debug.Log($"UpdateSpeedRate {_minRateSpeed}  {_maxRateSpeed}");
     }
