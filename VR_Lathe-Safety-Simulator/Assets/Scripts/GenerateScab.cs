@@ -57,6 +57,7 @@ public class GenerateScab : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
+        Debug.Log("Interect With Something");
         if (other.CompareTag("TargetWork"))
         {
             Debug.Log("Interect With Target");
