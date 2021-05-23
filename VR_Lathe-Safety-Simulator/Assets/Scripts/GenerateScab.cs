@@ -71,5 +71,7 @@ public class GenerateScab : MonoBehaviour
 
         isTruch = true;
 
+        effect.gameObject.SetActive(false);
+
     }
 }
