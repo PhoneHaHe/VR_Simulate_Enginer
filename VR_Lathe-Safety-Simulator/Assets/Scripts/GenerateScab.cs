@@ -59,6 +59,7 @@ public class GenerateScab : MonoBehaviour
 
         if (other.CompareTag("TargetWork"))
         {
+            Debug.Log("Interect With Target");
             isTruch = true;
 
         }
