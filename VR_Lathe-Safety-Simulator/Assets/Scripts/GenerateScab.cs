@@ -5,8 +5,8 @@ using UnityEngine;
 public class GenerateScab : MonoBehaviour
 {
 
-    bool isTruch = false;
-    bool isOnSelect = false;
+    public bool isTruch = false;
+    public bool isOnSelect {get; set;} = false;
     [SerializeField] private Transform effect;
     [SerializeField] private Transform _effaceParent;
     // Start is called before the first frame update
