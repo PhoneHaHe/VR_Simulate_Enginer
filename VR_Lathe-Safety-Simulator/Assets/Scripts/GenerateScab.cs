@@ -6,13 +6,15 @@ public class GenerateScab : MonoBehaviour
 {
 
     public bool isTruch = false;
-    public bool isOnSelect {get; set;} = false;
+    public bool isOnSelect { get; set; } = false;
     [SerializeField] private Transform effect;
     [SerializeField] private Transform _effaceParent;
+
+    private Rotation _currentRotation;
     // Start is called before the first frame update
     void Start()
     {
-
+        _currentRotation = GameObject.Find("ChuckLathe").GetComponent<Rotation>();
     }
 
     // Update is called once per frame
@@ -35,8 +37,14 @@ public class GenerateScab : MonoBehaviour
         {
             if (isTruch)
             {
-                Transform _effectS = Instantiate(effect);
-                _effectS.SetParent(_effaceParent);
+                if (_currentRotation.rotationByNegativeBool || _currentRotation.rotationByPositiveBool)
+                {
+
+                    Transform _effectS = Instantiate(effect);
+                    _effectS.SetParent(_effaceParent);
+                    
+                }
+
             }
         }
     }

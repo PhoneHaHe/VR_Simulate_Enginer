@@ -78,11 +78,11 @@ public class FeedSpeedController : MonoBehaviour
         }
         else if (_currentRateSpeedMax)
         {
-            _currentRateSpeed = _RateCanSelect[1];
+            _currentRateSpeed = _RateCanSelect[2];
         }
         else
         {
-            _currentRateSpeed = _RateCanSelect[2];
+            _currentRateSpeed = _RateCanSelect[1];
         }
     }
 
