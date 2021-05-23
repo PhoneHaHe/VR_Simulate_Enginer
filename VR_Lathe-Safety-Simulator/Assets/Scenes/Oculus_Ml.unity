@@ -5269,7 +5269,7 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8296172668843478922}
+      - m_Target: {fileID: 0}
         m_MethodName: set_isOnSelect
         m_Mode: 6
         m_Arguments:
@@ -5283,7 +5283,7 @@ MonoBehaviour:
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8296172668843478922}
+      - m_Target: {fileID: 0}
         m_MethodName: set_isOnSelect
         m_Mode: 6
         m_Arguments:
@@ -27968,7 +27968,6 @@ GameObject:
   - component: {fileID: 8296172668843478920}
   - component: {fileID: 8296172668843478919}
   - component: {fileID: 8296172668843478921}
-  - component: {fileID: 8296172668843478922}
   m_Layer: 8
   m_Name: CutingTool1
   m_TagString: HeadCutter
@@ -28124,21 +28123,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   returnToPosition: {x: 0, y: 0, z: 0}
   resetDelayTime: 5
---- !u!114 &8296172668843478922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8296172668843478917}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07ff258f02a7b9441849b54a212ccd1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isTruch: 0
-  effect: {fileID: 194336178}
-  _effaceParent: {fileID: 2117557817}
 --- !u!1 &8296172668969635894
 GameObject:
   m_ObjectHideFlags: 0
@@ -28477,6 +28461,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5848913454500686923}
+  - component: {fileID: 8511486630224979667}
+  - component: {fileID: 8511486630224979666}
   m_Layer: 8
   m_Name: BladeCutter
   m_TagString: Blade
@@ -28484,6 +28470,34 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &8511486630224979666
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8511486630224979665}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.08284543, y: 0.06822318, z: 0.31219527}
+  m_Center: {x: 0.08696426, y: 0.06986961, z: -0.85985446}
+--- !u!114 &8511486630224979667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8511486630224979665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07ff258f02a7b9441849b54a212ccd1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTruch: 0
+  effect: {fileID: 194336178}
+  _effaceParent: {fileID: 2117557817}
 --- !u!23 &8512087880699204620
 MeshRenderer:
   m_ObjectHideFlags: 0

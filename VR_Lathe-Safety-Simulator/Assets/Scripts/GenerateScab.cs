@@ -68,7 +68,12 @@ public class GenerateScab : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
 
-        isTruch = false;
+        if (other.CompareTag("TargetWork"))
+        {
+            Debug.Log("Interect With Target");
+            isTruch = false;
+
+        }
 
         effect.gameObject.SetActive(false);
 
