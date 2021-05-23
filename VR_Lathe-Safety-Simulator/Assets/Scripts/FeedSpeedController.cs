@@ -41,8 +41,8 @@ public class FeedSpeedController : MonoBehaviour
         float angleWithMinLimit = Mathf.Abs(hinge.angle - hinge.limits.min);
         float angleWithMaxLimit = Mathf.Abs(hinge.angle - hinge.limits.max);
 
-        Debug.Log("angleWithMinLimit " + angleWithMinLimit);
-        Debug.Log("angleWithMaxLimit " + angleWithMaxLimit);
+        // Debug.Log("angleWithMinLimit " + angleWithMinLimit);
+        // Debug.Log("angleWithMaxLimit " + angleWithMaxLimit);
 
         //Reached Min
         if (angleWithMinLimit < angleBetweenThreshold)
@@ -94,7 +94,7 @@ public class FeedSpeedController : MonoBehaviour
 
     public void UpdateSpeedRate()
     {
-        Debug.Log($"UpdateSpeedRate {SpeedVolumeController.MinRateSpeed}  {SpeedVolumeController.MaxRateSpeed}");
+        // Debug.Log($"UpdateSpeedRate {SpeedVolumeController.MinRateSpeed}  {SpeedVolumeController.MaxRateSpeed}");
 
         _minRateSpeed = SpeedVolumeController.MinRateSpeed;
         _maxRateSpeed = SpeedVolumeController.MaxRateSpeed;
@@ -126,7 +126,7 @@ public class FeedSpeedController : MonoBehaviour
 
         }
 
-        Debug.Log($"UpdateSpeedRate {_minRateSpeed}  {_maxRateSpeed}");
+        // Debug.Log($"UpdateSpeedRate {_minRateSpeed}  {_maxRateSpeed}");
     }
 
     public void isSwitchSelectPositive()

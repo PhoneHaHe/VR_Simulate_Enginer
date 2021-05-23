@@ -150,7 +150,7 @@ public class Rotation : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
 
-        Debug.Log("Tracking Something ");
+        // Debug.Log("Tracking Something ");
 
         if (other.CompareTag("HandPlayer"))
         {

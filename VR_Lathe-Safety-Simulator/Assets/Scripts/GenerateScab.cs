@@ -57,11 +57,9 @@ public class GenerateScab : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.CompareTag("Blade"))
+        if (other.CompareTag("TargetWork"))
         {
             isTruch = true;
-
-            SpeawnerEffect();
 
         }
     }
