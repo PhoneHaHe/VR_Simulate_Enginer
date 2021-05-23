@@ -69,7 +69,7 @@ public class GenerateScab : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
 
-        isTruch = true;
+        isTruch = false;
 
         effect.gameObject.SetActive(false);
 
