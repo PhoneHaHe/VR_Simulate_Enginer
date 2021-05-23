@@ -71,19 +71,25 @@ public class FeedSpeedController : MonoBehaviour
             }
         }
 
+        UpdateSpeedRate();
 
-        if (_currentRateSpeedMin)
+
+        if (_RateCanSelect.Count > 0)
         {
-            _currentRateSpeed = _RateCanSelect[0];
+            if (_currentRateSpeedMin)
+            {
+                _currentRateSpeed = _RateCanSelect[0];
+            }
+            else if (_currentRateSpeedMax)
+            {
+                _currentRateSpeed = _RateCanSelect[2];
+            }
+            else
+            {
+                _currentRateSpeed = _RateCanSelect[1];
+            }
         }
-        else if (_currentRateSpeedMax)
-        {
-            _currentRateSpeed = _RateCanSelect[2];
-        }
-        else
-        {
-            _currentRateSpeed = _RateCanSelect[1];
-        }
+
     }
 
     public void UpdateSpeedRate()
