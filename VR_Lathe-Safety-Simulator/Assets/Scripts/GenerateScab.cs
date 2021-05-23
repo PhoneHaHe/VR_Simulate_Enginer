@@ -15,6 +15,8 @@ public class GenerateScab : MonoBehaviour
     void Start()
     {
         _currentRotation = GameObject.Find("ChuckLathe").GetComponent<Rotation>();
+        effect.gameObject.GetComponent<Rigidbody>().useGravity = false;
+        effect.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -40,9 +42,11 @@ public class GenerateScab : MonoBehaviour
                 if (_currentRotation.rotationByNegativeBool || _currentRotation.rotationByPositiveBool)
                 {
 
-                    Transform _effectS = Instantiate(effect);
-                    _effectS.SetParent(_effaceParent);
-                    
+                    // Transform _effectS = Instantiate(effect);
+                    // _effectS.SetParent(_effaceParent);
+                    // _effectS.gameObject.GetComponent<Rigidbody>().useGravity = true;
+                    effect.gameObject.SetActive(true);
+
                 }
 
             }
