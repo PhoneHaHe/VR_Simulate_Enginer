@@ -109,7 +109,7 @@ public class FeedSpeedController : MonoBehaviour
             _RateCanSelect.Add(8);
 
         }
-        else if (_minRateSpeed == 214 && _maxRateSpeed == 750)
+        else if (_minRateSpeed == 214 && _maxRateSpeed == 975)
         {
 
             _RateCanSelect.Add(8);
@@ -117,7 +117,7 @@ public class FeedSpeedController : MonoBehaviour
             _RateCanSelect.Add(15);
 
         }
-        else if (_minRateSpeed == 750 && _maxRateSpeed == 750)
+        else if (_minRateSpeed == 750 && _maxRateSpeed == 3000)
         {
 
             _RateCanSelect.Add(15);

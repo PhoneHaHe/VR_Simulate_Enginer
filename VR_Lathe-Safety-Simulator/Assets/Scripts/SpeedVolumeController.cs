@@ -27,7 +27,7 @@ public class SpeedVolumeController : MonoBehaviour
 
         if (other != null)
      {
-            Debug.Log(other.name);
+            
             if (other.name == "A")
             {
                 MinRateSpeed = 54;

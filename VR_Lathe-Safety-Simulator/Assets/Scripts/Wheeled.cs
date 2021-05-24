@@ -29,7 +29,7 @@ public class Wheeled : MonoBehaviour
     }
     void Start()
     {
-        Debug.Log($"{targetx.transform.position} {targetx.name}");
+        /*Debug.Log($"{targetx.transform.position} {targetx.name}");*/
         this.currentPositionOfPlatform = targetx.transform.position;
 
         OnEnable();
