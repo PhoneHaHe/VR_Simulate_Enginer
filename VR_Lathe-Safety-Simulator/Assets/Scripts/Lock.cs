@@ -10,13 +10,16 @@ public class Lock : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        Debug.Log("Interect With Something");
+        /*Debug.Log("Interect With Something");*/
         if (other.CompareTag("TargetWork"))
         {
             Debug.Log("Interect With Target");
-            
-                isTrigger = true;
 
+            isTrigger = true;
+
+        }
+        else {
+            isTrigger = true;
         }
     }
 

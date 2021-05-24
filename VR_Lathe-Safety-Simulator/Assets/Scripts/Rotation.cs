@@ -156,14 +156,14 @@ public class Rotation : MonoBehaviour
         {
 
             if (rotateIsActive == true) {
-                if(rotationByPositiveBool || rotationByNegativeBool == true) { 
-                Debug.LogError("HandPlayer Tracking " + "Hand Dramage");
+                if(rotationByPositiveBool || rotationByNegativeBool == true) { /*
+                Debug.LogError("HandPlayer Tracking " + "Hand Dramage");*/
                 _light.enabled = true;
                 alert.Play();
                 }
             } 
         }
-        if (other.CompareTag("LatheApornPlatform")) {
+        if (other.name == "LatheAporn") {
             /*Debug.Log("LatheApornPlatform");*/
             if (rotateIsActive == true)
             {
@@ -175,17 +175,9 @@ public class Rotation : MonoBehaviour
             }
         }
         /*Debug.Log($"{other.name}");*/
-        if (rotateIsActive == true)
-        {
-            if (rotationByPositiveBool || rotationByNegativeBool == true)
-            {
-                alert.Play();
-                _light.enabled = true;
-            }
-        }
     }
 
-    void OnTriggerExit(Collider other) {
+    /*void OnTriggerExit(Collider other) {
 
 
         if (other.CompareTag("HandPlayer") || other.CompareTag("LatheApornPlatform")) {
@@ -196,6 +188,12 @@ public class Rotation : MonoBehaviour
         _light.enabled = false;
         alert.Stop();
 
+    }*/
+
+    public void ShuckdownSound() {
+
+        _light.enabled = false;
+        alert.Stop();
     }
 
 }

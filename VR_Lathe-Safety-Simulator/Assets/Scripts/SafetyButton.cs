@@ -13,6 +13,10 @@ public class SafetyButton : MonoBehaviour
     private float buttonOriginZ;
 
 
+    [SerializeField] private Transform _ObjectRotate;
+    private Rotation _rotateObject;
+
+
     //delay for hit
     private float buttonCanHitAgainTime = 0.5f;
     private float canHitAgain;
@@ -26,6 +30,7 @@ public class SafetyButton : MonoBehaviour
         button = transform.GetChild(0).gameObject;
         buttonOriginY = button.transform.position.y;
         buttonOriginZ = button.transform.position.z;
+        _rotateObject = _ObjectRotate.gameObject.GetComponent<Rotation>();
 
         buttonMain = GameObject.Find("Green_button1").GetComponent<ButtonStrucer>();
     }
@@ -50,6 +55,7 @@ public class SafetyButton : MonoBehaviour
             isSafeActivate = !isSafeActivate;
 
             button.transform.position = new Vector3(button.transform.position.x, button.transform.position.y - buttonReturnToDistanceY, button.transform.position.z);
+            _rotateObject.ShuckdownSound();
 
             safetyActivate();
             click.Play();
