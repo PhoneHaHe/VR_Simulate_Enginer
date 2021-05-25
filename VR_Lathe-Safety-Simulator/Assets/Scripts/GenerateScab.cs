@@ -10,6 +10,9 @@ public class GenerateScab : MonoBehaviour
     [SerializeField] private Transform effect;
     [SerializeField] private Transform _TargetEffect;
 
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioClip _audioClip;
+
     private Rotation _currentRotation;
     // Start is called before the first frame update
     void Start()
@@ -18,6 +21,7 @@ public class GenerateScab : MonoBehaviour
         effect.gameObject.GetComponent<Rigidbody>().useGravity = false;
         effect.gameObject.SetActive(false);
         _TargetEffect.gameObject.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -48,6 +52,7 @@ public class GenerateScab : MonoBehaviour
                     // _effectS.gameObject.GetComponent<Rigidbody>().useGravity = true;
                     effect.gameObject.SetActive(true);
                     _TargetEffect.gameObject.SetActive(true);
+                    _audioSource.PlayOneShot(_audioClip);
 
                 }
 

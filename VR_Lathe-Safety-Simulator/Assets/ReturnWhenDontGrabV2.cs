@@ -2,20 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ReturnWhenDontGrab : MonoBehaviour
+public class ReturnWhenDontGrabV2 : MonoBehaviour
 {
     [SerializeField] GameObject TargetToReturn;
-    Vector3 positionToTransform;
-    Quaternion rotationToTranform;
+    public Vector3 positionToTransform;
+    public Quaternion rotationToTranform;
 
-    void Awake() {
-        if (TargetToReturn != null)
+    void Awake()
+    {
+        if (TargetToReturn != null) { 
             positionToTransform = TargetToReturn.transform.localPosition;
             rotationToTranform = TargetToReturn.transform.localRotation;
+        }
     }
 
-    public void ReturnToTarget() {
+    public void ReturnToTarget()
+    {
         TargetToReturn.transform.localPosition = positionToTransform;
         TargetToReturn.transform.localRotation = rotationToTranform;
+
+        Debug.Log($"{positionToTransform}");
     }
 }

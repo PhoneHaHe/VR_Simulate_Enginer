@@ -7,6 +7,17 @@ public class Lock : MonoBehaviour
 
     [SerializeField] private LockObjects _Lo;
     public bool isTrigger = false;
+
+    void Awake() {
+
+       
+    
+    }
+
+    void Update() {
+
+        
+    }
     private void OnTriggerEnter(Collider other)
     {
 
@@ -18,9 +29,9 @@ public class Lock : MonoBehaviour
             isTrigger = true;
 
         }
-        else {
-            isTrigger = true;
-        }
+
+        
+
     }
 
 }

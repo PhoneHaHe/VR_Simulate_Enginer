@@ -12,6 +12,7 @@ TagManager:
   - HeadCutter
   - LatheApornPlatform
   - Blade
+  - EndPoint
   layers:
   - Default
   - TransparentFX

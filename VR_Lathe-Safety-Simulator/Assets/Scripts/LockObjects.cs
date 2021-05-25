@@ -9,6 +9,8 @@ public class LockObjects : MonoBehaviour
     [SerializeField] private List<Transform> _Legs;
     [SerializeField] private Transform _Target;
 
+    [SerializeField] private List<Transform> LegsPointReturn;
+
     public UnityEvent OnLock;
     public UnityEvent OnUnlock;
 
@@ -22,9 +24,11 @@ public class LockObjects : MonoBehaviour
     void Start()
     {
         _OriginPosition = new List<Vector3>();
-        for (int i = 0; i < _Legs.Count; i++) {
-            _OriginPosition.Add(_Legs[i].transform.position);
+        for (int i = 0; i < _Legs.Count; i++)
+        {
+            _OriginPosition.Add(new Vector3(_Legs[i].transform.position.x, _Legs[i].transform.position.y, _Legs[i].transform.position.z));
         }
+
 
     }
 
@@ -57,13 +61,15 @@ public class LockObjects : MonoBehaviour
         {
             if (onLockObject) 
             { 
-                _Legs[0].transform.position = _OriginPosition[0];
-                _Legs[1].transform.position = _OriginPosition[1];
-                _Legs[2].transform.position = _OriginPosition[2];
+                _Legs[0].transform.position = Vector3.MoveTowards(_Legs[0].transform.position, LegsPointReturn[0].position, step);
+                _Legs[1].transform.position = Vector3.MoveTowards(_Legs[1].transform.position, LegsPointReturn[1].position, step);
+                _Legs[2].transform.position = Vector3.MoveTowards(_Legs[2].transform.position, LegsPointReturn[2].position, step);
 
-                if (_Legs[0].transform.position == _OriginPosition[0]
-                    && _Legs[1].transform.position == _OriginPosition[1]
-                    && _Legs[2].transform.position == _OriginPosition[2])
+                
+
+                if (Vector3.Distance(_Legs[0].transform.position, LegsPointReturn[0].transform.position) == 0f
+                    && Vector3.Distance(_Legs[1].transform.position, LegsPointReturn[1].transform.position) == 0f
+                    && Vector3.Distance(_Legs[2].transform.position, LegsPointReturn[2].transform.position) == 0f)
                 {
                     for (int i = 0; i < _Legs.Count; i++)
                     {
@@ -72,6 +78,9 @@ public class LockObjects : MonoBehaviour
 
                     onLockObject = false;
                     TurnUnLock = false;
+                }
+                else { 
+                
                 }
             }
 
