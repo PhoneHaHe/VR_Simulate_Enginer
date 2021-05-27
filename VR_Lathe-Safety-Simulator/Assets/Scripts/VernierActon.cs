@@ -44,6 +44,16 @@ public class VernierActon : MonoBehaviour
 
     }
 
+    public void StandBySideToCalculate()
+    {
+
+        if (_VernierMonth.localPosition == Vector3.zero)
+        {
+            _VernierMonth.localPosition = _VernierMonth.localPosition + new Vector3(-0.31f, 0, 0);
+        }
+
+    }
+
     public void MoveVannierToTarget() {
 
         if (!isNear) {
@@ -58,17 +68,26 @@ public class VernierActon : MonoBehaviour
     public void UpdateText() {
         _VernierCanvas.gameObject.SetActive(true);
 
-        Debug.Log($"{_state.text}");
+        
 
         _state.text = " 101 mm.";
+    }
+
+    public void UpdateSideText()
+    {
+        _VernierCanvas.gameObject.SetActive(true);
+
+
+        _state.text = " 20 mm.";
     }
 
     public void ResetText()
     {
 
-        Debug.Log($"{_state.text}");
+        
 
         _state.text = " ___ mm.";
+        _VernierCanvas.gameObject.SetActive(false);
     }
 
     public void Reset()
