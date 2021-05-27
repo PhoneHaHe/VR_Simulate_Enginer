@@ -8,7 +8,7 @@ public class GenerateScab : MonoBehaviour
     public bool isTruch = false;
     public bool isOnSelect { get; set; } = false;
     [SerializeField] private Transform effect;
-    [SerializeField] private Transform _TargetEffect;
+    [SerializeField] private List<Transform> _TargetEffect;
 
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private AudioClip _audioClip;
@@ -20,7 +20,10 @@ public class GenerateScab : MonoBehaviour
         _currentRotation = GameObject.Find("ChuckLathe").GetComponent<Rotation>();
         effect.gameObject.GetComponent<Rigidbody>().useGravity = false;
         effect.gameObject.SetActive(false);
-        _TargetEffect.gameObject.SetActive(false);
+        for (int i = 0; i < _TargetEffect.Count; i++) {
+
+            _TargetEffect[i].gameObject.SetActive(false);
+        }
 
     }
 
@@ -51,7 +54,11 @@ public class GenerateScab : MonoBehaviour
                     // _effectS.SetParent(_effaceParent);
                     // _effectS.gameObject.GetComponent<Rigidbody>().useGravity = true;
                     effect.gameObject.SetActive(true);
-                    _TargetEffect.gameObject.SetActive(true);
+                    for (int i = 0; i < _TargetEffect.Count; i++)
+                    {
+
+                        _TargetEffect[i].gameObject.SetActive(true);
+                    }
                     _audioSource.PlayOneShot(_audioClip);
 
                 }

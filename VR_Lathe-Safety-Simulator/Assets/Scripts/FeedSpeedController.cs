@@ -30,9 +30,9 @@ public class FeedSpeedController : MonoBehaviour
     void Start()
     {
         hinge = GetComponent<HingeJoint>();
-        UpdateSpeedRate();
+        UpdateSpeedRate();/*
         Debug.Log("Max: " + hinge.limits.max);
-        Debug.Log("Min: " + hinge.limits.min);
+        Debug.Log("Min: " + hinge.limits.min);*/
     }
 
 

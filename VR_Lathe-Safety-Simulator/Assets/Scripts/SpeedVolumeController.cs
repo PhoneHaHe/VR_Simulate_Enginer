@@ -45,7 +45,7 @@ public class SpeedVolumeController : MonoBehaviour
             }
             
 
-            Debug.Log($"{MinRateSpeed}, {MaxRateSpeed}");
+            /*Debug.Log($"{MinRateSpeed}, {MaxRateSpeed}");*/
         }
     }
 
