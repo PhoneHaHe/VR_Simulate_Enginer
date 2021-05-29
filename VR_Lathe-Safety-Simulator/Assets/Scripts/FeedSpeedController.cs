@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class FeedSpeedController : MonoBehaviour
 {
@@ -26,11 +27,14 @@ public class FeedSpeedController : MonoBehaviour
 
     public static int _currentRateSpeed = 0;
     public List<int> _RateCanSelect;
+
+    [SerializeField] private Text _FeedText;
     // Start is called before the first frame update
     void Start()
     {
         hinge = GetComponent<HingeJoint>();
-        UpdateSpeedRate();/*
+        UpdateSpeedRate();
+        /*
         Debug.Log("Max: " + hinge.limits.max);
         Debug.Log("Min: " + hinge.limits.min);*/
     }
@@ -79,14 +83,17 @@ public class FeedSpeedController : MonoBehaviour
             if (_currentRateSpeedMin)
             {
                 _currentRateSpeed = _RateCanSelect[0];
+                _FeedText.text = $"{_minRateSpeed}";
             }
             else if (_currentRateSpeedMax)
             {
                 _currentRateSpeed = _RateCanSelect[2];
+                _FeedText.text = $"{_maxRateSpeed}";
             }
             else
             {
                 _currentRateSpeed = _RateCanSelect[1];
+                _FeedText.text = $"{(_maxRateSpeed + _minRateSpeed)/2}";
             }
         }
 

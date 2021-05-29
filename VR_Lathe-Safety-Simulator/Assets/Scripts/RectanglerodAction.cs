@@ -98,12 +98,12 @@ public class RectanglerodAction : MonoBehaviour
                 if (secondsButtonIsPressed)
                 {
 
-                    _lockObject.TurnLock = true;
+                    /*_lockObject.TurnLock = true;*/
                     rotationByAngle();
                 }
                 if (primaryButtonIsPressed)
                 {
-                    _lockObject.TurnUnLock = true;
+                    /*_lockObject.TurnUnLock = true;*/
                     rotationByAngleReturn();
 
                 }
@@ -115,15 +115,42 @@ public class RectanglerodAction : MonoBehaviour
 
     void rotationByAngle() {
 
-        _TargetRotationAction.transform.rotation = Quaternion.Euler(_TargetRotationAction.transform.eulerAngles.x, _TargetRotationAction.transform.eulerAngles.y, 120f);
-        _TargetRotationActionTwo.transform.rotation = Quaternion.Euler(_TargetRotationActionTwo.transform.eulerAngles.x, _TargetRotationActionTwo.transform.eulerAngles.y, 120f);
+        var _TargetOneRotate = Quaternion.Euler(_TargetRotationAction.transform.eulerAngles.x, _TargetRotationAction.transform.eulerAngles.y, 120f);
+        var _TargerTwoRotate = Quaternion.Euler(_TargetRotationActionTwo.transform.eulerAngles.x, _TargetRotationActionTwo.transform.eulerAngles.y, 120f);
+
+        var _currentPosition = _TargetRotationAction.transform.rotation;
+        var _currentPositionTwo = _TargetRotationActionTwo.transform.rotation;
+     
+        _TargetRotationAction.transform.rotation = Quaternion.Lerp(_currentPosition, _TargetOneRotate, Time.deltaTime * 1);
+        _TargetRotationActionTwo.transform.rotation = Quaternion.Lerp(_currentPositionTwo, _TargerTwoRotate, Time.deltaTime * 1);
+
+        /*Debug.Log($"{_TargetRotationAction.transform.localRotation.z}");*/
+
+        if (_TargetRotationAction.transform.localRotation.z > 0.8) {
+            _lockObject.TurnLock = true;
+        }
+
+        
     }
 
     void rotationByAngleReturn()
     {
 
-        _TargetRotationAction.transform.rotation = Quaternion.Euler(_TargetRotationAction.transform.eulerAngles.x, _TargetRotationAction.transform.eulerAngles.y, 0f);
-        _TargetRotationActionTwo.transform.rotation = Quaternion.Euler(_TargetRotationActionTwo.transform.eulerAngles.x, _TargetRotationActionTwo.transform.eulerAngles.y, 0f);
+        var _TargetOneRotate = Quaternion.Euler(_TargetRotationAction.transform.eulerAngles.x, _TargetRotationAction.transform.eulerAngles.y, -1f);
+        var _TargerTwoRotate = Quaternion.Euler(_TargetRotationActionTwo.transform.eulerAngles.x, _TargetRotationActionTwo.transform.eulerAngles.y, -1f);
+
+        var _currentPosition = _TargetRotationAction.transform.rotation;
+        var _currentPositionTwo = _TargetRotationActionTwo.transform.rotation;
+
+        _TargetRotationAction.transform.rotation = Quaternion.Lerp(_currentPosition, _TargetOneRotate, Time.deltaTime * 1);
+        _TargetRotationActionTwo.transform.rotation = Quaternion.Lerp(_currentPositionTwo, _TargerTwoRotate, Time.deltaTime * 1);
+
+        /*Debug.Log($"{_TargetRotationAction.transform.localRotation.z}");*/
+
+        if (_TargetRotationAction.transform.localRotation.z < 1)
+        {
+            _lockObject.TurnUnLock = true;
+        }
     }
 
 }
